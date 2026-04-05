@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Soho Clinic">
+<meta name="theme-color" content="#2a2320">
+<title>Soho Beauty Clinic — Historia Clínica</title>
+<link rel="apple-touch-icon" href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGMAagDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAQFAgMGAQcI/8QAURAAAQQBAQQGBgUJBAcGBwEAAQACAwQFEQYSITETQVFhcYEUIjKRocEjQlKx0QcVM1VicoKT8CRDU5IWNGOissLxNkRzdLPSJTVFRlRkg+H/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAyEQACAQMCAwUHBQEBAQAAAAAAAQIDESESMQRBUWFxgZHwEyIyobHB0QUUM+HxQiNS/9oADAMBAAIRAxEAPwD9loiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiICFAEXhJUHJ5anj2j0iUb54NY0bznHuA4qJSUcslJt2RO1C1zzxQsL5ZWxtHMuOgVG6xmsiC6KJuNrn68o3pCP3eQUdlTDi4yOV8uSuOaXgyO3tQCNSPq9YWDrN/CjVUlzZYybQUSdysZrbuyBhcPfyWIyGWl/QYlzAeRmlA+A1UqOOyWAMZBWZ1Bo3j8goGRdYhzOOhfaldXsdIx4GjdXhu83l4OSTmstkxUG7JG8HaB/HWhEP4nL3czv/AOZS/lO/FTRj6vMxl37zifvVVm60MeSxDGMDWvsuDwPrDo3cColBpXu/MKaeEl5EkNzrePT0n9244fNPSMzH7dOCUf7OXQ/FTPQq3VEG+HBVmcdJVmx8NWaSOSxbbG7jr6mhc7n3BQ4Sir3YUlN2svIkNy3R8LdSzX7y3eHvCl1b1SyPoLDJD2A8V46KdvKUSDse35hQMiyi1okyFdkOrg0SNPWToOXFWvOLyyNMHyLhuveveOqqGRXIBrRtixGOccx1PhrzW+vlI3SCKwx1aX7L+R8D1qyrLaWCrpNfDksUWIdqNRiskrVuZhERSAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAIBBBGhHIhfOqM3iqGYqPq3qjJWPGhBGjmns/sPlrqdF87y1WbaPaC5haV30WCYCQnrfqAx4/qpU06kXsb04TjJN7Gm/Z6plIx9JjYLkQ0jsMbrFIOxjgN37itWRrTYSiH3Kz7VXkHmNhB3vFnPRdCuXyvlJbJUMnBHqHwO6oE9h3+I7uWFVRpySs2vRnTPBzmm20n3HQNdJjNqo7LGF1bKMMLwOYY/Vvw4grqLlR1eZzJRp1O14Dh7F0OEyFbKUWWqkgexw1HW1w6wRzBXNxVeU6W5l3pvlkqzSFjDIAeRJA0B148RxVNR4V/eJYyc9Skz39qmSwQ2IjHNE2Rp5hwBH3rnH7KbMuPrU5R3N3oPJadh85Fl4yIv0czBq6I8/6/cVQZPMHHzBlqCWeEauBaOe72T2r1KFScHol+x5dXBwqq8l+p1b2uY4tcC0jgQeYK1V7EFqBk1eVskbxqHNOoKkRSCWNkjDq1wDge0HisVwzpbkuo3J7o9RFJYbcmYBYgIB6yxunfp5r0YR0krS9SLSbi1JaPI7sFHMkFgmN/Vo5ee6frfEei9FhksYb7VQgTRHlI31h3HqKzREjkqrjKTVkZa09EREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREABY5GBzCCARoQQeRBWSnKMVJNPYpKLi7MrmUs1tms/SVorWPuFhJrXI90A9j+Du8K1xmSrZSmLFaUPYToeYcO0HqK+c5aJmH2in9U4vsOfqs4mN3eA6v3j9y6XZGj6DjxQsv32nGhk/wAj+oD+9Vo1ZKppeXY1q0YuGrmuqOsREWxiEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAIBGhGhCIiA//Z">
+<link rel="manifest" id="manifestPlaceholder">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root {
+    --cream: #faf7f4;
+    --warm-white: #fff9f5;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --gold-dark: #a07840;
+    --charcoal: #2a2320;
+    --mid: #6b5c52;
+    --light-mid: #b8a99e;
+    --border: #e8ddd6;
+    --error: #c0392b;
+    --success: #5a8a6a;
+    --shadow: 0 4px 32px rgba(42,35,32,0.10);
+    --shadow-sm: 0 2px 12px rgba(42,35,32,0.07);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    min-height: 100vh;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HEADER ─── */
+  .app-header {
+    background: var(--charcoal);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .app-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+  .app-header .logo img {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--gold-dark);
+  }
+  .app-header .logo span { font-style: italic; color: var(--gold); }
+  .step-indicator {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--mid);
+    transition: all 0.3s ease;
+  }
+  .step-dot.active { background: var(--gold); transform: scale(1.3); }
+  .step-dot.done { background: var(--gold-dark); }
+
+  /* ─── MAIN LAYOUT ─── */
+  .app-body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  /* ─── STEP TITLE ─── */
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .step-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--mid);
+    margin-bottom: 32px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gold-dark);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  /* ─── FORM ELEMENTS ─── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .form-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .form-grid.cols-1 { grid-template-columns: 1fr; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full { grid-column: 1 / -1; }
+  label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    color: var(--charcoal);
+    transition: border-color 0.2s;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: #fff;
+  }
+  textarea { resize: vertical; min-height: 80px; }
+
+  /* ─── YES/NO QUESTIONS ─── */
+  .yesno-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .yesno-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 14px;
+    border-radius: var(--radius-sm);
+    transition: background 0.15s;
+    gap: 12px;
+  }
+  .yesno-row:nth-child(even) { background: rgba(201,169,110,0.05); }
+  .yesno-row:hover { background: rgba(201,169,110,0.10); }
+  .yesno-question {
+    font-size: 14px;
+    color: var(--charcoal);
+    flex: 1;
+    line-height: 1.4;
+  }
+  .yesno-buttons {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .yn-btn {
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--mid);
+    transition: all 0.18s;
+    min-width: 46px;
+  }
+  .yn-btn.yes.active {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+  }
+  .yn-btn.no.active {
+    background: var(--charcoal);
+    border-color: var(--charcoal);
+    color: white;
+  }
+  .yn-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+  /* ─── TREATMENT SELECTOR ─── */
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .treatment-card {
+    background: var(--warm-white);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.22s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .treatment-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transition: transform 0.22s ease;
+  }
+  .treatment-card:hover { border-color: var(--gold-light); box-shadow: var(--shadow); }
+  .treatment-card:hover::before { transform: scaleX(1); }
+  .treatment-card.selected {
+    border-color: var(--gold);
+    background: #fffbf5;
+    box-shadow: 0 4px 20px rgba(201,169,110,0.20);
+  }
+  .treatment-card.selected::before { transform: scaleX(1); }
+  .treatment-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .treatment-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .treatment-desc {
+    font-size: 12px;
+    color: var(--light-mid);
+    line-height: 1.5;
+  }
+  .treatment-card.selected .treatment-name { color: var(--gold-dark); }
+
+  /* ─── CONSENT TEXT ─── */
+  .consent-box {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px 22px;
+    max-height: 320px;
+    overflow-y: auto;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--mid);
+    margin-bottom: 20px;
+  }
+  .consent-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .consent-box h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 14px 0 6px;
+  }
+  .consent-box ul { padding-left: 18px; }
+  .consent-box ul li { margin-bottom: 4px; }
+
+  /* ─── SIGNATURE ─── */
+  .signature-wrapper {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    background: white;
+    cursor: crosshair;
+  }
+  .signature-wrapper canvas { display: block; touch-action: none; }
+  .signature-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--light-mid);
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .sig-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  .btn-clear {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    color: var(--mid);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-clear:hover { border-color: var(--error); color: var(--error); }
+
+  /* ─── FOLLOW-UP TABLE (LASER) ─── */
+  .followup-table-wrapper { overflow-x: auto; }
+  .followup-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .followup-table th {
+    background: var(--charcoal);
+    color: var(--gold-light);
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .followup-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  .followup-table input {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    padding: 6px 4px;
+    width: 100%;
+    color: var(--charcoal);
+  }
+  .followup-table input:focus { outline: none; background: rgba(201,169,110,0.08); border-radius: 4px; }
+  .followup-table tr:nth-child(even) td { background: rgba(201,169,110,0.04); }
+  .btn-add-row {
+    margin-top: 10px;
+    background: none;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 18px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    color: var(--mid);
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+  }
+  .btn-add-row:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+  /* ─── NAVIGATION BUTTONS ─── */
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .btn-primary {
+    background: var(--charcoal);
+    color: var(--gold-light);
+    border: none;
+    border-radius: 30px;
+    padding: 14px 38px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.22s;
+  }
+  .btn-primary:hover { background: var(--gold-dark); color: white; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(160,120,64,0.3); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--mid);
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    padding: 13px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold-dark); }
+  .btn-submit {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 48px;
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(160,120,64,0.3);
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(160,120,64,0.4); }
+  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* ─── GDPR CHECKBOX ─── */
+  .gdpr-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(201,169,110,0.06);
+    border: 1px solid var(--gold-light);
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+  }
+  .gdpr-box input[type="checkbox"] {
+    width: 20px; height: 20px;
+    min-width: 20px;
+    cursor: pointer;
+    accent-color: var(--gold-dark);
+    margin-top: 2px;
+  }
+  .gdpr-box label {
+    font-size: 13px;
+    color: var(--mid);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ─── SUCCESS SCREEN ─── */
+  .success-screen {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .success-icon { font-size: 64px; margin-bottom: 24px; display: block; }
+  .success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+  .success-subtitle { font-size: 15px; color: var(--mid); line-height: 1.6; }
+
+  /* ─── LOADING OVERLAY ─── */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(42,35,32,0.65);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+  }
+  .overlay.active { display: flex; }
+  .spinner {
+    width: 48px; height: 48px;
+    border: 3px solid rgba(201,169,110,0.3);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .overlay-text { color: var(--gold-light); font-size: 15px; letter-spacing: 0.06em; }
+
+  /* ─── VALIDATION ─── */
+  .error-msg {
+    font-size: 11px;
+    color: var(--error);
+    margin-top: 4px;
+    display: none;
+  }
+  .form-group.has-error input,
+  .form-group.has-error select { border-color: var(--error); }
+  .form-group.has-error .error-msg { display: block; }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--charcoal);
+    color: var(--gold-light);
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 2000;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    white-space: nowrap;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  .toast.error { background: var(--error); color: white; }
+
+  /* ─── SECTION DIVIDER ─── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .form-grid.cols-3 { grid-template-columns: 1fr 1fr; }
+    .treatment-grid { grid-template-columns: 1fr; }
+    .app-body { padding: 20px 16px 80px; }
+    .step-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="logo">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAGMAagDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAQFAgMGAQcI/8QAURAAAQQBAQQGBgUJBAcGBwEAAQACAwQFEQYSITETQVFhcYEUIjKRocEjQlKx0QcVM1VicoKT8CRDU5IWNGOissLxNkRzdLPSJTVFRlRkg+H/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAQIDBAX/xAAyEQACAQMCAwUHBQEBAQAAAAAAAQIDESESMQRBUWFxgZHwEyIyobHB0QUUM+HxQiNS/9oADAMBAAIRAxEAPwD9loiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiACFAEXhJUHJ5anj2j0iUb54NY0bznHuA4qJSUcslJt2RO1C1zzxQsL5ZWxtHMuOgVG6xmsiC6KJuNrn68o3pCP3eQUdlTDi4yOV8uSuOaXgyO3tQCNSPq9YWDrN/CjVUlzZYybQUSdysZrbuyBhcPfyWIyGWl/QYlzAeRmlA+A1UqOOyWAMZBWZ1Bo3j8goGRdYhzOOhfaldXsdIx4GjdXhu83l4OSTmstkxUG7JG8HaB/HWhEP4nL3czv/AOZS/lO/FTRj6vMxl37zifvVVm60MeSxDGMDWvsuDwPrDo3cColBpXu/MKaeEl5EkNzrePT0n9244fNPSMzH7dOCUf7OXQ/FTPQq3VEG+HBVmcdJVmx8NWaSOSxbbG7jr6mhc7n3BQ4Sir3YUlN2svIkNy3R8LdSzX7y3eHvCl1b1SyPoLDJD2A8V46KdvKUSDse35hQMiyi1okyFdkOrg0SNPWToOXFWvOLyyNMHyLhuveveOqqGRXIBrRtixGOccx1PhrzW+vlI3SCKwx1aX7L+R8D1qyrLaWCrpNfDksUWIdqNRissrVuZhERSAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAIBBBGhHIhfOqM3iqGYqPq3qjJWPGhBGjmns/sPlrqdF87y1WbaPaC5haV30WCYCQnrfqAx4/qpU06kXsb04TjJN7Gm/Z6plIx9JjYLkQ0jsMbrFIOxjgN37itWRrTYSiH3Kz7VXkHmNhB3vFnPRdCuXyvlJbJUMnBHqHwO6oE9h3+I7uWFVRpySs2vRnTPBzmm20n3HQNdJjNqo7LGF1bKMMLwOYY/Vvw4grqLlR1eZzJRp1O14Dh7F0OEyFbKUWWqkgexw1HW1w6wRzBXNxVeU6W5l3pvlkqzSFjDIAeRJA0B148RxVNR4V/eJYyc9Skz39qmSwQ2IjHNE2Rp5hwBH3rnH7KbMuPrU5R3N3oPJadh85Fo+5WckjkU+q4Q2IjHNE2Rp5hwBH3rnH7KbMuPrU5R3N3oPJadh85Fo+5WckjkU+q4Q2IjHNE2Rp5hwBH3rnH7KbMuPrU5R3N3oPJadh85Fo+5WckjkU+q4Q2IjHNE2Rp5hwBH3rnH7KbMuPrU5R3N3oPJadh85Fo+5WckjkU+q4="  alt="Soho" onerror="this.style.display='none'">
+    <span>Soho</span> Beauty Clinic
+  </div>
+  <div class="step-indicator" id="stepDots"></div>
+</header>
+
+<!-- LOADING OVERLAY -->
+<div class="overlay" id="overlay">
+  <div class="spinner"></div>
+  <div class="overlay-text">Generando PDF y guardando en Drive…</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- APP BODY -->
+<main class="app-body" id="appBody"></main>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  CONFIGURACIÓN — Reemplazá esta URL con tu Google Apps Script
+// ═══════════════════════════════════════════════════════════════
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHbqLGgS8yHxbnltLouMiAJ6L0aIgan0Oc7BKvMmQeKiOP1LfkQyBUYBvAVwsCbjpe/exec';
+
+// ═══════════════════════════════════════════════════════════════
+//  DATOS
+// ═══════════════════════════════════════════════════════════════
+const TREATMENTS = [
+  {
+    id: 'laser',
+    name: 'Depilación Láser Trionda',
+    icon: '✨',
+    desc: 'Eliminación del vello con tecnología láser de diodo',
+    hasFollowup: true,
+  },
+  {
+    id: 'radiofrecuencia',
+    name: 'Radiofrecuencia INDIBA',
+    icon: '🌀',
+    desc: 'Reafirmación cutánea y remodelación corporal',
+    hasFollowup: false,
+  },
+  {
+    id: 'cavitacion',
+    name: 'Cavitación',
+    icon: '💫',
+    desc: 'Remodelación de silueta por ultrasonido',
+    hasFollowup: false,
+  },
+  {
+    id: 'limpieza',
+    name: 'Limpieza Facial Profunda',
+    icon: '🌿',
+    desc: 'Higiene facial profesional e hidratación',
+    hasFollowup: false,
+  },
+  {
+    id: 'microneedling',
+    name: 'Microneedling',
+    icon: '⭐',
+    desc: 'Estimulación de colágeno con microagujas estériles',
+    hasFollowup: false,
+  },
+];
+
+const MEDICAL_QUESTIONS = [
+  '¿Se ha realizado tratamiento láser anteriormente?',
+  '¿Presentó efectos secundarios al realizarse el mismo?',
+  '¿Toma alguna medicación?',
+  '¿Toma anticonceptivos?',
+  '¿Tiene alteraciones hormonales o toma hormonas/esteroides?',
+  '¿Suele padecer herpes?',
+  '¿Padece diabetes?',
+  '¿Padece trastornos vasculares?',
+  '¿Está o cree que podría estar embarazada?',
+  '¿Se ha realizado peeling químico recientemente?',
+  '¿Padece problemas cardíacos?',
+  '¿Padece epilepsia?',
+  '¿Le aparecen manchas en la piel con facilidad?',
+  '¿Ha tenido una intervención quirúrgica reciente?',
+  '¿Consume algún tipo de droga o estupefaciente?',
+  '¿Tiene marcapasos u otro implante electrónico?',
+];
+
+const CONSENT_TEXTS = {
+  laser: `
+    <h3>Consentimiento Informado — Depilación Láser Trionda</h3>
+    <p>La depilación láser es un tratamiento que utiliza energía lumínica para eliminar el vello de forma progresiva y duradera.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Eritema e inflamación transitoria en la zona tratada (remite en pocas horas).</li>
+      <li>Sensación de calor durante y después de la sesión.</li>
+      <li>En pieles sensibles, pequeñas costras o cambios de pigmentación transitorios.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Exposición solar reciente o autobronceadores.</li>
+      <li>Medicamentos fotosensibilizantes.</li>
+      <li>Enfermedades cutáneas activas en la zona a tratar.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>El/la paciente CONFIRMA haber sido informado/a del procedimiento, sus efectos secundarios y contraindicaciones. AUTORIZA a Soho Beauty Clinic a realizar el tratamiento y se COMPROMETE a seguir las instrucciones pre y post-tratamiento. DOY FE de no haber omitido ni alterado datos en mi historial clínico.</p>
+    <p>Comprendo que en cualquier momento puedo revocar este consentimiento. Eximo al personal aplicador y a la clínica de responsabilidades derivadas de la no veracidad en esta declaración.</p>
+  `,
+  radiofrecuencia: `
+    <h3>Consentimiento Informado — Radiofrecuencia Monopolar INDIBA Deep Care</h3>
+    <p>La radiofrecuencia aplicada para fines estéticos es una tecnología habitual en medicina estética. INDIBA® Deep Care trabaja a 448 kHz y sus indicaciones incluyen reafirmación cutánea, remodelación corporal, reducción de celulitis y rejuvenecimiento.</p>
+    <h4>Efectos secundarios</h4>
+    <ul>
+      <li>Sensación de incremento de temperatura en la zona tratada (normal y transitoria).</li>
+      <li>Eritema (enrojecimiento) que remite en unas horas.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Marcapasos u otro tipo de implante electrónico.</li>
+      <li>Embarazo.</li>
+      <li>Tromboflebitis.</li>
+      <li>Tumor activo en la zona a tratar.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>El PACIENTE DEJA CONSTANCIA de haber sido debidamente asesorado/a. CONFIRMA que se le han explicado el efecto, naturaleza, mecanismos, efectos secundarios y contraindicaciones del procedimiento. RECONOCE que los procesos estéticos no son una ciencia exacta y que la obligación del aplicador es de medios y no de resultados. AUTORIZA a Soho Beauty Clinic a realizar el tratamiento. DOY FE de la veracidad de los datos informados.</p>
+  `,
+  cavitacion: `
+    <h3>Consentimiento Informado — Cavitación</h3>
+    <p>El propósito de este tratamiento es la remodelación de la silueta mediante cavitación ultrasónica. Las sesiones se realizan una vez a la semana, con una duración máxima de 40 minutos por zona.</p>
+    <h4>Indicaciones previas y durante el tratamiento</h4>
+    <ul>
+      <li>Evitar exposición solar, cabinas solares o depilación eléctrica/láser/IPL al menos 3 días antes.</li>
+      <li>Beber al menos 3 litros de agua por día durante el tratamiento.</li>
+      <li>Se aconseja dieta hipocalórica durante el período de tratamiento.</li>
+      <li>Realizar drenaje manual preferiblemente dentro de las 72 horas posteriores a cada sesión.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o período de lactancia.</li>
+      <li>Prótesis o implantes metálicos / osteosíntesis.</li>
+      <li>Epilepsia.</li>
+      <li>Quemaduras o heridas abiertas en la zona a tratar.</li>
+      <li>Colesterol &gt;300 mg/dl o hipertrigliceridemia &gt;500 mg/dl.</li>
+      <li>Otitis crónica o procesos febriles activos.</li>
+      <li>Patologías hepáticas o renales sin consulta médica.</li>
+      <li>Procesos oncológicos activos.</li>
+      <li>Marcapasos.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO que el tratamiento me ha sido explicado a fondo. ACEPTO los riesgos y complicaciones inherentes (hematomas, edemas, irritación, quemaduras superficiales transitorias). RECONOZCO que pueden surgir condiciones imprevistas. ME COMPROMETO a seguir las instrucciones antes, durante y después del tratamiento. DOY FE de no haber omitido datos en mi historial.</p>
+  `,
+  limpieza: `
+    <h3>Consentimiento Informado — Limpieza Facial Profunda</h3>
+    <p>REQUIERO y AUTORIZO a Soho Beauty Clinic y su personal calificado a realizar en mi persona el tratamiento de Higiene Facial Profunda.</p>
+    <h4>Propósito del procedimiento</h4>
+    <ul>
+      <li>Eliminar impurezas, células muertas y exceso de sebo.</li>
+      <li>Extraer puntos negros y espinillas.</li>
+      <li>Mejorar la apariencia y textura de la piel.</li>
+    </ul>
+    <h4>Posibles riesgos</h4>
+    <ul>
+      <li>Enrojecimiento temporal.</li>
+      <li>Sensibilidad en la piel.</li>
+      <li>Pequeñas lesiones en caso de extracciones.</li>
+      <li>Infección (poco probable siguiendo las recomendaciones post-tratamiento).</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Acné activo severo, rosácea o herpes labial activo.</li>
+      <li>Piel extremadamente sensible o alérgica.</li>
+      <li>Uso reciente de retinoides, ácido glicólico o Dercutane.</li>
+      <li>No exponer la piel al sol al menos 72 horas después del tratamiento.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber recibido información completa sobre el procedimiento. CONSIENTO que se tomen fotografías antes y después para llevar registro de mi evolución. ACEPTO que el centro pueda modificar el tratamiento si lo considera necesario. ME COMPROMETO a seguir las instrucciones de cuidado posterior. DOY FE de no haber omitido información relevante de mi historial médico.</p>
+  `,
+  microneedling: `
+    <h3>Consentimiento Informado — Microneedling</h3>
+    <p>El microneedling es un procedimiento médico-estético que implica múltiples punturas en la piel con un dispositivo dotado de microagujas estériles, con el fin de estimular la generación de colágeno y elastina, favorecer la penetración de sustancias activas y mejorar imperfecciones cutáneas.</p>
+    <h4>Riesgos y posibles efectos adversos</h4>
+    <ul>
+      <li>Hematomas, rojeces, inflamación y alergia, todos de carácter transitorio.</li>
+      <li>En casos poco frecuentes: decoloración y lesiones acneiformes en la zona tratada.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Enfermedades cutáneas activas o infecciones localizadas.</li>
+    </ul>
+    <h4>Precauciones</h4>
+    <ul>
+      <li>No tomar aspirina o derivados desde la semana anterior al tratamiento.</li>
+      <li>Evitar gimnasio, sauna y piscina hasta 48 horas después del tratamiento.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO que el profesional me ha explicado a fondo los riesgos, efectos no deseados y posibles molestias. ACEPTO los riesgos y complicaciones inherentes. RECONOZCO que en el curso del tratamiento pueden surgir condiciones no previstas y autorizo el tratamiento de las mismas. COMPRENDO que el resultado depende de factores individuales y que la medicina no garantiza la perfección absoluta. ME COMPROMETO a seguir las instrucciones del profesional. DOY FE de no haber omitido datos en mi historial clínico-quirúrgico. Se me ha informado de mi derecho a rechazar o revocar este consentimiento.</p>
+  `,
+};
+
+// ═══════════════════════════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════════════════════════
+let state = {
+  step: 1, // 1=treatment, 2=personal+medical, 3=consent+(followup), 4=signature+gdpr
+  totalSteps: 4,
+  treatment: null,
+  personal: {},
+  medical: {},
+  followup: [],
+  areasToTreat: '',
+  signature: null,
+  gdpr: false,
+};
+
+// ═══════════════════════════════════════════════════════════════
+//  ROUTER
+// ═══════════════════════════════════════════════════════════════
+function render() {
+  updateDots();
+  const body = document.getElementById('appBody');
+  body.innerHTML = '';
+  if (state.step === 1) renderStep1(body);
+  else if (state.step === 2) renderStep2(body);
+  else if (state.step === 3) renderStep3(body);
+  else if (state.step === 4) renderStep4(body);
+  else if (state.step === 5) renderSuccess(body);
+  window.scrollTo(0, 0);
+}
+
+function updateDots() {
+  const dots = document.getElementById('stepDots');
+  dots.innerHTML = '';
+  for (let i = 1; i <= state.totalSteps; i++) {
+    const d = document.createElement('div');
+    d.className = 'step-dot' + (i === state.step ? ' active' : i < state.step ? ' done' : '');
+    dots.appendChild(d);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STEP 1 — TRATAMIENTO
+// ═══════════════════════════════════════════════════════════════
+function renderStep1(body) {
+  body.innerHTML = `
+    <h1 class="step-title">Seleccioná el tratamiento</h1>
+    <p class="step-subtitle">Elegí el procedimiento que se realizará hoy</p>
+    <div class="treatment-grid" id="treatmentGrid"></div>
+    <div class="nav-bar">
+      <div></div>
+      <button class="btn-primary" id="btnNext1" disabled>Continuar →</button>
+    </div>
+  `;
+  const grid = document.getElementById('treatmentGrid');
+  TREATMENTS.forEach(t => {
+    const card = document.createElement('div');
+    card.className = 'treatment-card' + (state.treatment?.id === t.id ? ' selected' : '');
+    card.innerHTML = `
+      <span class="treatment-icon">${t.icon}</span>
+      <div class="treatment-name">${t.name}</div>
+      <div class="treatment-desc">${t.desc}</div>
+    `;
+    card.addEventListener('click', () => {
+      state.treatment = t;
+      document.querySelectorAll('.treatment-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      document.getElementById('btnNext1').disabled = false;
+    });
+    grid.appendChild(card);
+  });
+  document.getElementById('btnNext1').addEventListener('click', () => {
+    state.step = 2;
+    render();
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STEP 2 — DATOS PERSONALES + CUESTIONARIO MÉDICO
+// ═══════════════════════════════════════════════════════════════
+function renderStep2(body) {
+  const p = state.personal;
+  const today = new Date().toISOString().split('T')[0];
+
+  body.innerHTML = `
+    <h1 class="step-title">Datos del paciente</h1>
+    <p class="step-subtitle">Completá la información personal y el cuestionario médico</p>
+
+    <div class="card">
+      <div class="card-title">Información Personal</div>
+      <div class="form-grid">
+        <div class="form-group" id="fg_nombre">
+          <label>Nombre *</label>
+          <input type="text" id="f_nombre" value="${p.nombre||''}" placeholder="Nombre/s">
+          <span class="error-msg">Campo requerido</span>
+        </div>
+        <div class="form-group" id="fg_apellidos">
+          <label>Apellidos *</label>
+          <input type="text" id="f_apellidos" value="${p.apellidos||''}" placeholder="Apellido/s">
+          <span class="error-msg">Campo requerido</span>
+        </div>
+        <div class="form-group" id="fg_nacimiento">
+          <label>Fecha de nacimiento *</label>
+          <input type="date" id="f_nacimiento" value="${p.nacimiento||''}">
+          <span class="error-msg">Campo requerido</span>
+        </div>
+        <div class="form-group" id="fg_documento">
+          <label>Nº Documento *</label>
+          <input type="text" id="f_documento" value="${p.documento||''}" placeholder="DNI / NIE / Pasaporte">
+          <span class="error-msg">Campo requerido</span>
+        </div>
+        <div class="form-group" id="fg_telefono">
+          <label>Teléfono *</label>
+          <input type="tel" id="f_telefono" value="${p.telefono||''}" placeholder="+34 600 000 000">
+          <span class="error-msg">Campo requerido</span>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="f_email" value="${p.email||''}" placeholder="correo@ejemplo.com">
+        </div>
+        <div class="form-group full">
+          <label>Dirección</label>
+          <input type="text" id="f_direccion" value="${p.direccion||''}" placeholder="Calle, número, piso...">
+        </div>
+        <div class="form-group">
+          <label>Localidad</label>
+          <input type="text" id="f_localidad" value="${p.localidad||''}" placeholder="Málaga">
+        </div>
+        <div class="form-group">
+          <label>Código Postal</label>
+          <input type="text" id="f_cp" value="${p.cp||''}" placeholder="29000">
+        </div>
+        <div class="form-group">
+          <label>Tipo de piel</label>
+          <select id="f_tipopiel">
+            <option value="" ${!p.tipopiel?'selected':''}>Seleccionar…</option>
+            <option value="Normal" ${p.tipopiel==='Normal'?'selected':''}>Normal</option>
+            <option value="Seca" ${p.tipopiel==='Seca'?'selected':''}>Seca</option>
+            <option value="Grasa" ${p.tipopiel==='Grasa'?'selected':''}>Grasa</option>
+            <option value="Mixta" ${p.tipopiel==='Mixta'?'selected':''}>Mixta</option>
+            <option value="Sensible" ${p.tipopiel==='Sensible'?'selected':''}>Sensible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Fecha de sesión</label>
+          <input type="date" id="f_fecha" value="${p.fecha||today}">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Cuestionario Médico</div>
+      <div class="yesno-grid" id="medicalGrid"></div>
+      <div class="divider"></div>
+      <div class="form-group">
+        <label>Observaciones / Medicación actual</label>
+        <textarea id="f_observaciones" placeholder="Detallá aquí cualquier medicación, alergia u observación relevante…">${p.observaciones||''}</textarea>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn-secondary" id="btnBack2">← Volver</button>
+      <button class="btn-primary" id="btnNext2">Continuar →</button>
+    </div>
+  `;
+
+  // Render medical questions
+  const grid = document.getElementById('medicalGrid');
+  MEDICAL_QUESTIONS.forEach((q, i) => {
+    const row = document.createElement('div');
+    row.className = 'yesno-row';
+    const saved = state.medical[i];
+    row.innerHTML = `
+      <span class="yesno-question">${q}</span>
+      <div class="yesno-buttons">
+        <button class="yn-btn yes ${saved===true?'active':''}" data-i="${i}" data-v="true">Sí</button>
+        <button class="yn-btn no ${saved===false?'active':''}" data-i="${i}" data-v="false">No</button>
+      </div>
+    `;
+    grid.appendChild(row);
+  });
+
+  grid.querySelectorAll('.yn-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = +btn.dataset.i;
+      const v = btn.dataset.v === 'true';
+      state.medical[i] = v;
+      const row = btn.closest('.yesno-row');
+      row.querySelectorAll('.yn-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  document.getElementById('btnBack2').addEventListener('click', () => { state.step = 1; render(); });
+  document.getElementById('btnNext2').addEventListener('click', () => {
+    if (!validateStep2()) return;
+    savePersonalData();
+    state.step = 3;
+    render();
+  });
+}
+
+function validateStep2() {
+  const required = ['nombre','apellidos','nacimiento','documento','telefono'];
+  let ok = true;
+  required.forEach(f => {
+    const fg = document.getElementById('fg_'+f);
+    const val = document.getElementById('f_'+f).value.trim();
+    if (!val) { fg.classList.add('has-error'); ok = false; }
+    else { fg.classList.remove('has-error'); }
+  });
+  if (!ok) { showToast('Completá los campos obligatorios', true); }
+  return ok;
+}
+
+function savePersonalData() {
+  ['nombre','apellidos','nacimiento','documento','telefono','email','direccion','localidad','cp','tipopiel','fecha','observaciones'].forEach(f => {
+    const el = document.getElementById('f_'+f);
+    if (el) state.personal[f] = el.value;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STEP 3 — CONSENTIMIENTO + (SEGUIMIENTO LÁSER)
+// ═══════════════════════════════════════════════════════════════
+function renderStep3(body) {
+  const t = state.treatment;
+  const hasFollowup = t.hasFollowup;
+
+  body.innerHTML = `
+    <h1 class="step-title">Consentimiento informado</h1>
+    <p class="step-subtitle">${t.name}</p>
+
+    ${hasFollowup ? `
+    <div class="card">
+      <div class="card-title">Zonas a tratar</div>
+      <div class="form-group">
+        <label>Áreas seleccionadas para esta sesión</label>
+        <input type="text" id="f_areas" value="${state.areasToTreat}" placeholder="Ej: axilas, piernas, bikini…">
+      </div>
+    </div>
+    ` : ''}
+
+    <div class="card">
+      <div class="card-title">Documento de consentimiento</div>
+      <div class="consent-box">${CONSENT_TEXTS[t.id]}</div>
+      <p style="font-size:12px;color:var(--light-mid);text-align:center;">Desplazá para leer el documento completo antes de continuar</p>
+    </div>
+
+    ${hasFollowup ? `
+    <div class="card">
+      <div class="card-title">Planilla de seguimiento de tratamiento</div>
+      <div class="followup-table-wrapper">
+        <table class="followup-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Tratamiento / Zona</th>
+              <th>Potencia</th>
+              <th>Precio</th>
+              <th>Observación</th>
+              <th>Firma</th>
+            </tr>
+          </thead>
+          <tbody id="followupBody"></tbody>
+        </table>
+      </div>
+      <button class="btn-add-row" id="btnAddRow">+ Agregar sesión</button>
+    </div>
+    ` : ''}
+
+    <div class="nav-bar">
+      <button class="btn-secondary" id="btnBack3">← Volver</button>
+      <button class="btn-primary" id="btnNext3">Ir a firmar →</button>
+    </div>
+  `;
+
+  if (hasFollowup) {
+    if (state.followup.length === 0) addFollowupRow();
+    else renderFollowupRows();
+
+    document.getElementById('btnAddRow').addEventListener('click', addFollowupRow);
+    document.getElementById('f_areas').addEventListener('input', e => { state.areasToTreat = e.target.value; });
+  }
+
+  document.getElementById('btnBack3').addEventListener('click', () => { state.step = 2; render(); });
+  document.getElementById('btnNext3').addEventListener('click', () => {
+    if (hasFollowup) saveFollowupData();
+    state.step = 4;
+    render();
+  });
+}
+
+function addFollowupRow() {
+  state.followup.push({ fecha:'', tratamiento:'', potencia:'', precio:'', observacion:'', firma:'' });
+  renderFollowupRows();
+}
+
+function renderFollowupRows() {
+  const tbody = document.getElementById('followupBody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  state.followup.forEach((row, i) => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input type="date" value="${row.fecha}" data-i="${i}" data-f="fecha"></td>
+      <td><input type="text" placeholder="zona/tratamiento" value="${row.tratamiento}" data-i="${i}" data-f="tratamiento"></td>
+      <td><input type="text" placeholder="J/cm²" value="${row.potencia}" data-i="${i}" data-f="potencia"></td>
+      <td><input type="text" placeholder="€" value="${row.precio}" data-i="${i}" data-f="precio"></td>
+      <td><input type="text" placeholder="notas" value="${row.observacion}" data-i="${i}" data-f="observacion"></td>
+      <td><input type="text" placeholder="—" value="${row.firma}" data-i="${i}" data-f="firma"></td>
+    `;
+    tbody.appendChild(tr);
+  });
+  tbody.querySelectorAll('input').forEach(inp => {
+    inp.addEventListener('input', e => {
+      state.followup[+e.target.dataset.i][e.target.dataset.f] = e.target.value;
+    });
+  });
+}
+
+function saveFollowupData() {
+  // already saved via input events
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STEP 4 — FIRMA + GDPR + ENVIAR
+// ═══════════════════════════════════════════════════════════════
+let signatureCanvas, signatureCtx, isDrawing = false, hasSigned = false;
+
+function renderStep4(body) {
+  body.innerHTML = `
+    <h1 class="step-title">Firma y envío</h1>
+    <p class="step-subtitle">Firma con el dedo en el recuadro para completar el proceso</p>
+
+    <div class="card">
+      <div class="card-title">Firma del Paciente</div>
+      <div class="signature-wrapper" id="sigWrapper">
+        <canvas id="sigCanvas" width="740" height="200"></canvas>
+        <span class="signature-label" id="sigLabel">Firmá aquí con el dedo →</span>
+      </div>
+      <div class="sig-actions">
+        <button class="btn-clear" id="btnClearSig">Limpiar firma</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Protección de datos</div>
+      <div class="gdpr-box">
+        <input type="checkbox" id="gdprCheck" ${state.gdpr?'checked':''}>
+        <label for="gdprCheck">
+          He leído y acepto el tratamiento de mis datos personales conforme al Reglamento General de Protección de Datos (RGPD). Mis datos serán utilizados exclusivamente para la gestión de mi historia clínica por parte de Soho Beauty Clinic. Puedo ejercer mis derechos de acceso, rectificación y supresión en cualquier momento.
+        </label>
+      </div>
+    </div>
+
+    <div class="card" style="background:rgba(201,169,110,0.05);border-color:var(--gold-light);">
+      <div class="card-title">Resumen de la sesión</div>
+      <div style="font-size:14px;color:var(--mid);line-height:2;">
+        <strong style="color:var(--charcoal)">Paciente:</strong> ${state.personal.nombre} ${state.personal.apellidos}<br>
+        <strong style="color:var(--charcoal)">Tratamiento:</strong> ${state.treatment.name}<br>
+        <strong style="color:var(--charcoal)">Fecha:</strong> ${state.personal.fecha || new Date().toLocaleDateString('es-ES')}<br>
+        <strong style="color:var(--charcoal)">Documento:</strong> ${state.personal.documento}
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <button class="btn-secondary" id="btnBack4">← Volver</button>
+      <button class="btn-submit" id="btnSubmit">Generar PDF y guardar →</button>
+    </div>
+  `;
+
+  // Resize canvas to wrapper
+  const wrapper = document.getElementById('sigWrapper');
+  const canvas = document.getElementById('sigCanvas');
+  canvas.width = wrapper.offsetWidth || 700;
+  canvas.height = 200;
+  signatureCanvas = canvas;
+  signatureCtx = canvas.getContext('2d');
+  signatureCtx.strokeStyle = '#2a2320';
+  signatureCtx.lineWidth = 2.5;
+  signatureCtx.lineCap = 'round';
+  signatureCtx.lineJoin = 'round';
+
+  if (state.signature) {
+    const img = new Image();
+    img.onload = () => signatureCtx.drawImage(img, 0, 0);
+    img.src = state.signature;
+    document.getElementById('sigLabel').style.opacity = '0';
+    hasSigned = true;
+  }
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const src = e.touches ? e.touches[0] : e;
+    return { x: (src.clientX - rect.left) * scaleX, y: (src.clientY - rect.top) * scaleY };
+  }
+
+  canvas.addEventListener('mousedown', e => { isDrawing = true; const p = getPos(e); signatureCtx.beginPath(); signatureCtx.moveTo(p.x, p.y); });
+  canvas.addEventListener('mousemove', e => { if (!isDrawing) return; const p = getPos(e); signatureCtx.lineTo(p.x, p.y); signatureCtx.stroke(); hasSigned = true; document.getElementById('sigLabel').style.opacity='0'; });
+  canvas.addEventListener('mouseup', () => { isDrawing = false; });
+
+  canvas.addEventListener('touchstart', e => { e.preventDefault(); isDrawing = true; const p = getPos(e); signatureCtx.beginPath(); signatureCtx.moveTo(p.x, p.y); }, {passive:false});
+  canvas.addEventListener('touchmove', e => { e.preventDefault(); if (!isDrawing) return; const p = getPos(e); signatureCtx.lineTo(p.x, p.y); signatureCtx.stroke(); hasSigned = true; document.getElementById('sigLabel').style.opacity='0'; }, {passive:false});
+  canvas.addEventListener('touchend', () => { isDrawing = false; });
+
+  document.getElementById('btnClearSig').addEventListener('click', () => {
+    signatureCtx.clearRect(0, 0, canvas.width, canvas.height);
+    hasSigned = false;
+    state.signature = null;
+    document.getElementById('sigLabel').style.opacity = '1';
+  });
+
+  document.getElementById('gdprCheck').addEventListener('change', e => { state.gdpr = e.target.checked; });
+  document.getElementById('btnBack4').addEventListener('click', () => { state.step = 3; render(); });
+  document.getElementById('btnSubmit').addEventListener('click', handleSubmit);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SUBMIT
+// ═══════════════════════════════════════════════════════════════
+async function handleSubmit() {
+  if (!hasSigned) { showToast('Necesitás firmar antes de enviar', true); return; }
+  if (!state.gdpr) { showToast('Aceptá la política de protección de datos', true); return; }
+
+  state.signature = signatureCanvas.toDataURL('image/png');
+
+  document.getElementById('overlay').classList.add('active');
+
+  try {
+    const pdfBase64 = await generatePDF();
+    await sendToGoogleDrive(pdfBase64);
+    document.getElementById('overlay').classList.remove('active');
+    state.step = 5;
+    render();
+  } catch (err) {
+    document.getElementById('overlay').classList.remove('active');
+    console.error(err);
+    showToast('Error al enviar. Revisá la conexión.', true);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  PDF GENERATION
+// ═══════════════════════════════════════════════════════════════
+async function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+  const W = 210, margin = 18, lineH = 7;
+  let y = 20;
+  const p = state.personal;
+  const t = state.treatment;
+
+  const addText = (text, x, size=11, bold=false, color=[42,35,32]) => {
+    doc.setFontSize(size);
+    doc.setFont('helvetica', bold ? 'bold' : 'normal');
+    doc.setTextColor(...color);
+    doc.text(text, x, y);
+  };
+  const newLine = (n=1) => { y += lineH * n; };
+  const checkPage = (need=20) => { if (y + need > 270) { doc.addPage(); y = 20; } };
+  const hLine = (col=[200,185,165]) => { doc.setDrawColor(...col); doc.line(margin, y, W-margin, y); newLine(0.5); };
+
+  // ── Header ──
+  doc.setFillColor(42, 35, 32);
+  doc.rect(0, 0, W, 30, 'F');
+  doc.setFontSize(22);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(232, 213, 176);
+  doc.text('Soho Beauty Clinic', margin, 14);
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(185, 160, 120);
+  doc.text('Historia Clínica — Consentimiento Informado', margin, 22);
+  doc.setTextColor(150, 130, 110);
+  doc.text(new Date().toLocaleDateString('es-ES', {day:'2-digit',month:'long',year:'numeric'}), W-margin, 22, {align:'right'});
+  y = 40;
+
+  // ── Treatment ──
+  doc.setFillColor(248, 244, 239);
+  doc.rect(margin, y-5, W-margin*2, 14, 'F');
+  addText('TRATAMIENTO:', margin+4, 10, false, [160,120,64]);
+  addText(t.name, margin+45, 12, true, [42,35,32]);
+  newLine(1.5);
+  hLine();
+  newLine(0.5);
+
+  // ── Personal data ──
+  const addField = (label, value, xOffset=0) => {
+    doc.setFontSize(9); doc.setFont('helvetica','bold'); doc.setTextColor(140,110,90);
+    doc.text(label.toUpperCase(), margin+xOffset, y);
+    doc.setFontSize(11); doc.setFont('helvetica','normal'); doc.setTextColor(42,35,32);
+    doc.text(value||'—', margin+xOffset, y+4.5);
+  };
+
+  addText('DATOS PERSONALES DEL PACIENTE', margin, 10, true, [160,120,64]);
+  newLine(1.2);
+  hLine([220,205,185]);
+  newLine(0.8);
+
+  addField('Nombre', p.nombre||'', 0);
+  addField('Apellidos', p.apellidos||'', 55);
+  newLine(2);
+  addField('Fecha de Nacimiento', p.nacimiento ? new Date(p.nacimiento+'T00:00').toLocaleDateString('es-ES') : '—', 0);
+  addField('Nº Documento', p.documento||'', 55);
+  addField('Teléfono', p.telefono||'', 105);
+  newLine(2);
+  addField('Email', p.email||'—', 0);
+  addField('Localidad', p.localidad||'—', 75);
+  addField('CP', p.cp||'—', 135);
+  newLine(2);
+  addField('Dirección', p.direccion||'—', 0);
+  newLine(2);
+  addField('Tipo de piel', p.tipopiel||'—', 0);
+  addField('Fecha sesión', p.fecha ? new Date(p.fecha+'T00:00').toLocaleDateString('es-ES') : '—', 55);
+  newLine(2.5);
+
+  // ── Medical questionnaire ──
+  checkPage(60);
+  hLine();
+  addText('CUESTIONARIO MÉDICO', margin, 10, true, [160,120,64]);
+  newLine(1.2);
+  hLine([220,205,185]);
+  newLine(0.5);
+
+  MEDICAL_QUESTIONS.forEach((q, i) => {
+    checkPage(8);
+    const ans = state.medical[i];
+    const ansText = ans === true ? 'SÍ' : ans === false ? 'NO' : 'N/R';
+    const color = ans === true ? [160,80,80] : [80,130,100];
+    doc.setFontSize(10); doc.setFont('helvetica','normal'); doc.setTextColor(60,50,45);
+    doc.text(`${i+1}. ${q}`, margin, y);
+    doc.setFontSize(10); doc.setFont('helvetica','bold'); doc.setTextColor(...color);
+    doc.text(ansText, W-margin, y, {align:'right'});
+    newLine(1);
+    if (i < MEDICAL_QUESTIONS.length-1) {
+      doc.setDrawColor(235,225,215);
+      doc.line(margin, y, W-margin, y);
+    }
+    newLine(0.2);
+  });
+
+  if (p.observaciones) {
+    checkPage(20);
+    newLine(1);
+    addText('OBSERVACIONES / MEDICACIÓN:', margin, 10, true, [160,120,64]);
+    newLine(1.2);
+    doc.setFontSize(10); doc.setFont('helvetica','normal'); doc.setTextColor(80,65,55);
+    const obsLines = doc.splitTextToSize(p.observaciones, W-margin*2);
+    doc.text(obsLines, margin, y);
+    y += obsLines.length * 5;
+  }
+
+  // ── Laser followup ──
+  if (t.hasFollowup && state.followup.length > 0) {
+    doc.addPage(); y = 20;
+    addText('PLANILLA DE SEGUIMIENTO — ' + t.name.toUpperCase(), margin, 11, true, [42,35,32]);
+    newLine(1.2);
+    hLine();
+    newLine(0.5);
+
+    if (state.areasToTreat) {
+      addText('Zonas a tratar: ' + state.areasToTreat, margin, 10, false, [120,90,60]);
+      newLine(1.5);
+    }
+
+    // Table header
+    const cols = [18, 52, 90, 115, 140, 175];
+    const headers = ['FECHA','TRATAMIENTO/ZONA','POTENCIA','PRECIO','OBSERVACIÓN','FIRMA'];
+    doc.setFillColor(42,35,32);
+    doc.rect(margin, y-4, W-margin*2, 10, 'F');
+    headers.forEach((h, i) => {
+      doc.setFontSize(8); doc.setFont('helvetica','bold'); doc.setTextColor(232,213,176);
+      doc.text(h, cols[i], y+2);
+    });
+    newLine(1.5);
+
+    state.followup.forEach((row, ri) => {
+      checkPage(10);
+      if (ri % 2 === 0) {
+        doc.setFillColor(252,248,244);
+        doc.rect(margin, y-4, W-margin*2, 9, 'F');
+      }
+      doc.setFontSize(9); doc.setFont('helvetica','normal'); doc.setTextColor(60,50,45);
+      const vals = [
+        row.fecha ? new Date(row.fecha+'T00:00').toLocaleDateString('es-ES') : '',
+        row.tratamiento||'', row.potencia||'', row.precio||'',
+        row.observacion||'', row.firma||''
+      ];
+      vals.forEach((v, i) => doc.text(v, cols[i], y));
+      newLine(1.4);
+      doc.setDrawColor(230,220,210);
+      doc.line(margin, y, W-margin, y);
+      newLine(0.1);
+    });
+  }
+
+  // ── Consent text ──
+  doc.addPage(); y = 20;
+  addText('DOCUMENTO DE CONSENTIMIENTO INFORMADO', margin, 12, true, [42,35,32]);
+  newLine(1.3);
+  hLine();
+  newLine(0.5);
+
+  // Strip HTML
+  const temp = document.createElement('div');
+  temp.innerHTML = CONSENT_TEXTS[t.id];
+  const lines = temp.innerText.split('\n').filter(l => l.trim());
+  lines.forEach(line => {
+    checkPage(10);
+    const wrapped = doc.splitTextToSize(line.trim(), W-margin*2);
+    const isHeading = line.trim().length < 60 && (line.includes('Consentimiento') || line.includes('RIESGO') || line.includes('CONTRA') || line.includes('PRECAUC') || line.includes('EFECTOS') || line.includes('Declaración') || line.includes('Indicac'));
+    doc.setFontSize(isHeading ? 10 : 9.5);
+    doc.setFont('helvetica', isHeading ? 'bold' : 'normal');
+    doc.setTextColor(isHeading ? 160 : 80, isHeading ? 120 : 65, isHeading ? 64 : 55);
+    doc.text(wrapped, margin, y);
+    y += wrapped.length * (isHeading ? 5.5 : 5);
+    if (isHeading) newLine(0.3);
+  });
+
+  // ── Signature ──
+  checkPage(50);
+  newLine(2);
+  hLine();
+  newLine(1);
+  addText('FIRMA DEL PACIENTE', margin, 10, true, [160,120,64]);
+  newLine(1.5);
+
+  if (state.signature) {
+    try {
+      doc.addImage(state.signature, 'PNG', margin, y, 80, 35);
+      y += 38;
+    } catch(e) {}
+  }
+
+  doc.setDrawColor(160,120,64);
+  doc.line(margin, y, margin+80, y);
+  newLine(1);
+  doc.setFontSize(9); doc.setFont('helvetica','normal'); doc.setTextColor(140,120,100);
+  doc.text(`${p.nombre||''} ${p.apellidos||''}`, margin, y);
+  newLine(0.8);
+  doc.text('Fecha: ' + (p.fecha ? new Date(p.fecha+'T00:00').toLocaleDateString('es-ES') : new Date().toLocaleDateString('es-ES')), margin, y);
+
+  // ── GDPR note ──
+  newLine(2);
+  doc.setFillColor(248,244,239);
+  doc.rect(margin, y-3, W-margin*2, 18, 'F');
+  doc.setFontSize(8); doc.setFont('helvetica','italic'); doc.setTextColor(140,120,100);
+  const gdprText = 'El/la paciente ha dado su consentimiento expreso para el tratamiento de sus datos personales conforme al RGPD (UE) 2016/679, con la finalidad exclusiva de gestión de historia clínica por parte de Soho Beauty Clinic.';
+  const gdprLines = doc.splitTextToSize(gdprText, W-margin*2-8);
+  doc.text(gdprLines, margin+4, y+3);
+
+  return doc.output('datauristring').split(',')[1];
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  SEND TO GOOGLE APPS SCRIPT
+// ═══════════════════════════════════════════════════════════════
+async function sendToGoogleDrive(pdfBase64) {
+  const apellido = (state.personal.apellidos || 'Desconocido').trim().charAt(0).toUpperCase();
+  const fecha = state.personal.fecha || new Date().toISOString().split('T')[0];
+  const filename = `${state.personal.apellidos||'Paciente'}_${state.personal.nombre||''}_${state.treatment.id}_${fecha}.pdf`
+    .replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_\-\.]/g, '');
+
+  const payload = {
+    pdf: pdfBase64,
+    filename,
+    folder: apellido,
+    paciente: `${state.personal.nombre} ${state.personal.apellidos}`,
+    tratamiento: state.treatment.name,
+    fecha,
+  };
+
+  const resp = await fetch(APPS_SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+
+  if (!resp.ok) throw new Error('Apps Script error: ' + resp.status);
+  return resp.json();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  STEP 5 — SUCCESS
+// ═══════════════════════════════════════════════════════════════
+function renderSuccess(body) {
+  document.getElementById('stepDots').innerHTML = '';
+  body.innerHTML = `
+    <div class="success-screen">
+      <span class="success-icon">✅</span>
+      <h1 class="success-title">¡Todo listo!</h1>
+      <p class="success-subtitle">
+        El consentimiento de <strong>${state.personal.nombre} ${state.personal.apellidos}</strong><br>
+        fue guardado en Google Drive correctamente.<br><br>
+        Carpeta: <strong>${(state.personal.apellidos||'').charAt(0).toUpperCase()}</strong> / ${state.treatment.name}
+      </p>
+      <div style="margin-top:40px;">
+        <button class="btn-primary" id="btnNewPatient" style="font-size:15px;padding:16px 44px;">
+          Nuevo paciente →
+        </button>
+      </div>
+    </div>
+  `;
+  document.getElementById('btnNewPatient').addEventListener('click', () => {
+    state = { step:1, totalSteps:4, treatment:null, personal:{}, medical:{}, followup:[], areasToTreat:'', signature:null, gdpr:false };
+    render();
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════════════════════════════
+function showToast(msg, isError=false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast' + (isError ? ' error' : '') + ' show';
+  setTimeout(() => { t.classList.remove('show'); }, 3000);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════
+render();
+</script>
+<script>
+// ── PWA Manifest dinámico ──
+const LOGO_B64 = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/wAARCABAAEADASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAMEBQIBBv/EACsQAAIBAwMDBAIDAQAAAAAAAAECAwAEERIhMUFRYQUTIjJxgUKRof/EABcBAQEBAQAAAAAAAAAAAAAAAAECAAP/xAAcEQEBAQADAQEBAAAAAAAAAAAAARECEiExQf/aAAwDAQACEQMRAD8A+qUpSgUpSgUpSgUpSgUpSgUpSgUpXmWVIY2kkYKijJJoOeq6pFpsSs4Z5ZGKRRL9zsBkn2A4z5NcOj3010sjXVvJbzI2CjgcjI4PIPI/tXG+ubfULy3llgkWK3kLrLgEFgMDHPIyfOMVw0e3uLCyuLW8haMsxkjJIIdScjBHBBBH1quaVqVaUpQKUpQKUpQKUpQKUpQKUpQKUpQKUpQKUpQKVBq19Hp9u0rhmJO1EXlnY8AD3JqPTNRubuaSK5tDCyDcpDZDDIGQRwcE8dcj0rmsXqUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSgUpSg//Z';
+
+const manifest = {
+  name: "Soho Beauty Clinic",
+  short_name: "Soho Clinic",
+  description: "Historia clínica y consentimiento informado",
+  start_url: "./",
+  display: "standalone",
+  background_color: "#2a2320",
+  theme_color: "#2a2320",
+  orientation: "portrait",
+  icons: [
+    { src: LOGO_B64, sizes: "192x192", type: "image/jpeg" },
+    { src: LOGO_B64, sizes: "512x512", type: "image/jpeg" }
+  ]
+};
+
+const blob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+const manifestURL = URL.createObjectURL(blob);
+document.getElementById('manifestPlaceholder').setAttribute('href', manifestURL);
+</script>
+</body>
+</html>

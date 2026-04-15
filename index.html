@@ -1389,7 +1389,9 @@ async function generatePDF() {
     try {
       doc.addImage(state.signature, 'PNG', margin, y, 80, 35);
       y += 38;
-    } catch(e) {}
+    } catch(e) { 
+      console.error('Error firma:', e);
+    }
   }
 
   doc.setDrawColor(160,120,64);

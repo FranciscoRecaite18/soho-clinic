@@ -73,17 +73,59 @@
   .app-header .logo span { font-style: italic; color: var(--gold); }
   .step-indicator {
     display: flex;
-    gap: 8px;
+    gap: 0;
     align-items: center;
   }
-  .step-dot {
-    width: 8px; height: 8px;
+  .step-node {
+    width: 26px; height: 26px;
+    min-width: 26px;
     border-radius: 50%;
-    background: var(--mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1.5px solid var(--light-mid);
+    color: var(--light-mid);
+    background: transparent;
     transition: all 0.3s ease;
   }
-  .step-dot.active { background: var(--gold); transform: scale(1.3); }
-  .step-dot.done { background: var(--gold-dark); }
+  .step-node.active { border-color: var(--gold); background: var(--gold); color: var(--charcoal); }
+  .step-node.done { border-color: var(--gold-dark); background: var(--gold-dark); color: white; }
+  .step-connector {
+    width: 16px; height: 1.5px;
+    background: var(--light-mid);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+  .step-connector.done { background: var(--gold-dark); opacity: 1; }
+
+  /* ─── PROGRESS BAR ─── */
+  .progress-track {
+    height: 3px;
+    width: 100%;
+    background: var(--border);
+    position: sticky;
+    top: 96px;
+    z-index: 99;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    transition: width 0.4s ease;
+  }
+
+  /* ─── STEP EYEBROW ─── */
+  .step-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 8px;
+  }
 
   /* ─── MAIN LAYOUT ─── */
   .app-body {
@@ -226,7 +268,76 @@
   }
   .yn-btn:hover { border-color: var(--gold); color: var(--gold-dark); }
 
+  /* ─── CATEGORY SELECTOR ─── */
+  .category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .category-card {
+    background: var(--warm-white);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 24px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.22s ease;
+  }
+  .category-card:hover { border-color: var(--gold-light); box-shadow: var(--shadow); transform: translateY(-2px); }
+  .category-icon {
+    width: 60px; height: 60px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-dark);
+  }
+  .category-icon svg { width: 30px; height: 30px; }
+  .category-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .category-desc { font-size: 13px; color: var(--light-mid); line-height: 1.5; margin-bottom: 14px; }
+  .category-count {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    background: rgba(201,169,110,0.10);
+    border-radius: 20px;
+    padding: 5px 14px;
+  }
+  .btn-back-category {
+    background: none;
+    border: none;
+    color: var(--mid);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .btn-back-category:hover { color: var(--gold-dark); }
+
   /* ─── TREATMENT SELECTOR ─── */
+  .treatment-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--gold-dark);
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.03em;
+  }
   .treatment-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -260,7 +371,18 @@
     box-shadow: 0 4px 20px rgba(201,169,110,0.20);
   }
   .treatment-card.selected::before { transform: scaleX(1); }
-  .treatment-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+  .treatment-icon {
+    width: 44px; height: 44px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mid);
+    transition: color 0.22s ease;
+  }
+  .treatment-icon svg { width: 26px; height: 26px; }
+  .treatment-card:hover .treatment-icon,
+  .treatment-card.selected .treatment-icon { color: var(--gold-dark); }
   .treatment-name {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
@@ -305,6 +427,13 @@
   }
   .consent-box ul { padding-left: 18px; }
   .consent-box ul li { margin-bottom: 4px; }
+  .consent-hint {
+    font-size: 12px;
+    color: var(--light-mid);
+    text-align: center;
+    transition: color 0.2s;
+  }
+  .consent-hint.read { color: var(--success); font-weight: 600; }
 
   /* ─── SIGNATURE ─── */
   .signature-wrapper {
@@ -473,8 +602,24 @@
   .success-screen {
     text-align: center;
     padding: 60px 20px;
+    animation: successIn 0.5s ease;
   }
-  .success-icon { font-size: 64px; margin-bottom: 24px; display: block; }
+  @keyframes successIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .success-check { display: flex; justify-content: center; margin-bottom: 20px; }
+  .success-check-circle {
+    stroke-dasharray: 227;
+    stroke-dashoffset: 227;
+    animation: successDraw 0.5s ease forwards;
+  }
+  .success-check-mark {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: successDraw 0.3s ease 0.5s forwards;
+  }
+  @keyframes successDraw { to { stroke-dashoffset: 0; } }
   .success-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
@@ -483,6 +628,23 @@
     margin-bottom: 12px;
   }
   .success-subtitle { font-size: 15px; color: var(--mid); line-height: 1.6; }
+  .success-card {
+    text-align: left;
+    max-width: 420px;
+    margin: 24px auto 0;
+  }
+  .success-note {
+    max-width: 420px;
+    margin: 12px auto 0;
+    padding: 12px 18px;
+    background: rgba(201,169,110,0.06);
+    border: 1px solid var(--gold-light);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.5;
+    text-align: left;
+  }
 
   /* ─── LOADING OVERLAY ─── */
   .overlay {
@@ -537,6 +699,31 @@
   .toast.show { transform: translateX(-50%) translateY(0); }
   .toast.error { background: var(--error); color: white; }
 
+  /* ─── INTEREST CHIPS ─── */
+  .chip-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .chip {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--mid);
+    transition: all 0.18s;
+  }
+  .chip:hover { border-color: var(--gold); color: var(--gold-dark); }
+  .chip.active {
+    background: var(--gold-dark);
+    border-color: var(--gold-dark);
+    color: white;
+  }
+
   /* ─── SECTION DIVIDER ─── */
   .divider {
     height: 1px;
@@ -548,6 +735,7 @@
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; }
     .form-grid.cols-3 { grid-template-columns: 1fr 1fr; }
+    .category-grid { grid-template-columns: 1fr; }
     .treatment-grid { grid-template-columns: 1fr; }
     .app-body { padding: 20px 16px 80px; }
     .step-title { font-size: 26px; }
@@ -564,6 +752,9 @@
   </div>
   <div class="step-indicator" id="stepDots"></div>
 </header>
+<div class="progress-track">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
 
 <!-- LOADING OVERLAY -->
 <div class="overlay" id="overlay">
@@ -586,41 +777,124 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOcIBlglJLNYi5
 // ═══════════════════════════════════════════════════════════════
 //  DATOS
 // ═══════════════════════════════════════════════════════════════
-const TREATMENTS = [
+function svgIcon(inner) {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${inner}</svg>`;
+}
+
+const ICONS = {
+  petalFlower: svgIcon(`<ellipse cx="12" cy="7" rx="3" ry="5"/><ellipse cx="12" cy="17" rx="3" ry="5"/><ellipse cx="7" cy="12" rx="5" ry="3"/><ellipse cx="17" cy="12" rx="5" ry="3"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/>`),
+  syringe: svgIcon(`<path d="M17 3 L21 7"/><path d="M17 3 L7 13"/><path d="M13 9 L15 11"/><path d="M7 13 L4 20"/>`),
+  laserWand: svgIcon(`<path d="M13 2 L4 14 L11 14 L10 22 L20 9 L13 9 Z"/>`),
+  waves: svgIcon(`<circle cx="12" cy="19" r="1.1" fill="currentColor" stroke="none"/><path d="M8.3 15.3 a5.2 5.2 0 0 1 7.4 0"/><path d="M5.3 12.3 a9.2 9.2 0 0 1 13.4 0"/><path d="M2.3 9.3 a13.2 13.2 0 0 1 19.4 0"/>`),
+  bubbles: svgIcon(`<circle cx="6" cy="18" r="2"/><circle cx="13" cy="12" r="3"/><circle cx="18" cy="5" r="4"/>`),
+  leaf: svgIcon(`<path d="M6 18 C6 10 12 4 20 4 C20 12 14 18 6 18 Z"/><path d="M6 18 C10 14 14 10 20 4"/>`),
+  dotGrid: svgIcon(`<circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="17" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="17" r="1" fill="currentColor" stroke="none"/>`),
+  faceLift: svgIcon(`<ellipse cx="12" cy="15" rx="6" ry="7"/><path d="M9 5 L12 2 L15 5"/>`),
+  bodyLift: svgIcon(`<circle cx="9" cy="5" r="2.2"/><path d="M5 20 C5 12 6 9 9 9 C12 9 13 12 13 20"/><path d="M18 10 L21 7 M21 7 L21 10 M21 7 L18 7"/>`),
+  droplet: svgIcon(`<path d="M12 3 C12 3 6 11.5 6 15.5 A6 6 0 0 0 18 15.5 C18 11.5 12 3 12 3 Z"/>`),
+  helix: svgIcon(`<path d="M3 8 L7.5 17 L12 8 L16.5 17 L21 8"/>`),
+  glow: svgIcon(`<path d="M12 3 L13 9 L19 10 L13 11 L12 17 L11 11 L5 10 L11 9 Z"/><circle cx="18" cy="18" r="1.3" fill="currentColor" stroke="none"/>`),
+  mist: svgIcon(`<path d="M7 4 L5 8"/><path d="M12 3 L9.5 9"/><path d="M17 4 L14.5 10"/><path d="M4 15 a8 5 0 0 0 16 0"/>`),
+};
+
+const TREATMENT_CATEGORIES = [
   {
-    id: 'laser',
-    name: 'Depilación Láser Trionda',
-    icon: '✨',
-    desc: 'Eliminación del vello con tecnología láser de diodo',
-    hasFollowup: true,
+    category: 'Tratamientos Estéticos',
+    icon: ICONS.petalFlower,
+    desc: 'Láser, radiofrecuencia, cavitación, faciales y HIFU',
+    treatments: [
+      {
+        id: 'laser',
+        name: 'Depilación Láser Trionda',
+        icon: ICONS.laserWand,
+        desc: 'Eliminación del vello con tecnología láser de diodo',
+        hasFollowup: true,
+      },
+      {
+        id: 'radiofrecuencia',
+        name: 'Radiofrecuencia INDIBA',
+        icon: ICONS.waves,
+        desc: 'Reafirmación cutánea y remodelación corporal',
+        hasFollowup: false,
+      },
+      {
+        id: 'cavitacion',
+        name: 'Cavitación',
+        icon: ICONS.bubbles,
+        desc: 'Remodelación de silueta por ultrasonido',
+        hasFollowup: false,
+      },
+      {
+        id: 'limpieza',
+        name: 'Limpieza Facial Profunda',
+        icon: ICONS.leaf,
+        desc: 'Higiene facial profesional e hidratación',
+        hasFollowup: false,
+      },
+      {
+        id: 'microneedling',
+        name: 'Microneedling',
+        icon: ICONS.dotGrid,
+        desc: 'Estimulación de colágeno con microagujas estériles',
+        hasFollowup: false,
+      },
+      {
+        id: 'hifu_facial',
+        name: 'HIFU Facial',
+        icon: ICONS.faceLift,
+        desc: 'Lifting facial no invasivo con ultrasonido focalizado de alta intensidad',
+        hasFollowup: false,
+      },
+      {
+        id: 'hifu_corporal',
+        name: 'HIFU Corporal',
+        icon: ICONS.bodyLift,
+        desc: 'Remodelación y tensado corporal con ultrasonido focalizado de alta intensidad',
+        hasFollowup: false,
+      },
+    ],
   },
   {
-    id: 'radiofrecuencia',
-    name: 'Radiofrecuencia INDIBA',
-    icon: '🌀',
-    desc: 'Reafirmación cutánea y remodelación corporal',
-    hasFollowup: false,
-  },
-  {
-    id: 'cavitacion',
-    name: 'Cavitación',
-    icon: '💫',
-    desc: 'Remodelación de silueta por ultrasonido',
-    hasFollowup: false,
-  },
-  {
-    id: 'limpieza',
-    name: 'Limpieza Facial Profunda',
-    icon: '🌿',
-    desc: 'Higiene facial profesional e hidratación',
-    hasFollowup: false,
-  },
-  {
-    id: 'microneedling',
-    name: 'Microneedling',
-    icon: '⭐',
-    desc: 'Estimulación de colágeno con microagujas estériles',
-    hasFollowup: false,
+    category: 'Medicina Estética',
+    icon: ICONS.syringe,
+    desc: 'Neuromodulador, ácido hialurónico, bioestimulación e inyectables',
+    treatments: [
+      {
+        id: 'botox',
+        name: 'Neuromodulador (Botox)',
+        icon: ICONS.syringe,
+        desc: 'Suavizado de líneas de expresión mediante toxina botulínica',
+        hasFollowup: false,
+      },
+      {
+        id: 'acido_hialuronico',
+        name: 'Ácido Hialurónico',
+        icon: ICONS.droplet,
+        desc: 'Relleno y volumen facial con ácido hialurónico',
+        hasFollowup: false,
+      },
+      {
+        id: 'inductores_colageno',
+        name: 'Inductores de Colágeno',
+        icon: ICONS.helix,
+        desc: 'Bioestimulación de colágeno para mejorar firmeza y calidad de la piel',
+        hasFollowup: false,
+      },
+      {
+        id: 'skin_booster',
+        name: 'Skin Booster',
+        icon: ICONS.glow,
+        desc: 'Hidratación profunda con microinyecciones de ácido hialurónico',
+        hasFollowup: false,
+      },
+      {
+        id: 'mesoterapia',
+        name: 'Mesoterapia',
+        icon: ICONS.mist,
+        desc: 'Revitalización cutánea con microinyecciones de activos',
+        hasFollowup: false,
+      },
+    ],
   },
 ];
 
@@ -754,6 +1028,147 @@ const CONSENT_TEXTS = {
     <h4>Declaración del paciente</h4>
     <p>CONFIRMO que el profesional me ha explicado a fondo los riesgos, efectos no deseados y posibles molestias. ACEPTO los riesgos y complicaciones inherentes. RECONOZCO que en el curso del tratamiento pueden surgir condiciones no previstas y autorizo el tratamiento de las mismas. COMPRENDO que el resultado depende de factores individuales y que la medicina no garantiza la perfección absoluta. ME COMPROMETO a seguir las instrucciones del profesional. DOY FE de no haber omitido datos en mi historial clínico-quirúrgico. Se me ha informado de mi derecho a rechazar o revocar este consentimiento.</p>
   `,
+  hifu_facial: `
+    <h3>Consentimiento Informado — HIFU Facial</h3>
+    <p>El HIFU (High Intensity Focused Ultrasound) facial es un tratamiento no invasivo que utiliza ultrasonido focalizado de alta intensidad para estimular la producción de colágeno en las capas profundas de la piel, produciendo un efecto de lifting y tensado facial progresivo.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento y sensación de calor transitorios en la zona tratada.</li>
+      <li>Leve inflamación o sensibilidad al tacto durante 24-48 horas.</li>
+      <li>En casos poco frecuentes, hematomas o adormecimiento temporal.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Marcapasos u otros implantes electrónicos.</li>
+      <li>Implantes metálicos o de relleno permanente en la zona a tratar.</li>
+      <li>Infecciones activas, heridas abiertas o lesiones cutáneas en la zona.</li>
+      <li>Enfermedades autoinmunes o trastornos de la coagulación no controlados.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>El/la paciente CONFIRMA haber sido informado/a del procedimiento, sus efectos y contraindicaciones. AUTORIZA a Soho Beauty Clinic a realizar el tratamiento y COMPRENDE que los resultados son progresivos y pueden variar según cada organismo. DOY FE de no haber omitido datos relevantes en mi historial clínico.</p>
+  `,
+  hifu_corporal: `
+    <h3>Consentimiento Informado — HIFU Corporal</h3>
+    <p>El HIFU corporal emplea ultrasonido focalizado de alta intensidad para remodelar la silueta, tensar la piel y reducir la grasa localizada mediante estimulación térmica controlada en profundidad.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento y calor en la zona tratada.</li>
+      <li>Sensibilidad, hinchazón leve o hematomas transitorios.</li>
+      <li>Sensación de hormigueo o adormecimiento pasajero.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Marcapasos u otros dispositivos electrónicos implantados.</li>
+      <li>Prótesis metálicas en la zona a tratar.</li>
+      <li>Procesos oncológicos activos.</li>
+      <li>Trastornos de la coagulación o enfermedades autoinmunes no controladas.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber sido informado/a del procedimiento, sus efectos secundarios y contraindicaciones. AUTORIZO a Soho Beauty Clinic a realizar el tratamiento. COMPRENDO que los resultados son progresivos y varían según cada organismo. DOY FE de la veracidad de los datos aportados en mi historial clínico.</p>
+  `,
+  botox: `
+    <h3>Consentimiento Informado — Neuromodulador (Toxina Botulínica)</h3>
+    <p>El tratamiento con neuromodulador (toxina botulínica) consiste en la infiltración de pequeñas dosis del producto en músculos específicos para reducir temporalmente las líneas de expresión. El efecto se observa entre los 3 y 7 días posteriores, con duración aproximada de 4 a 6 meses.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento, hinchazón o hematomas leves en los puntos de inyección.</li>
+      <li>Dolor de cabeza transitorio.</li>
+      <li>Asimetría o caída palpebral temporal (poco frecuente).</li>
+      <li>Sensación de pesadez en la zona tratada.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Enfermedades neuromusculares (ej. miastenia gravis).</li>
+      <li>Alergia conocida a la toxina botulínica o a alguno de sus componentes.</li>
+      <li>Infección activa en la zona a tratar.</li>
+      <li>Uso de determinados antibióticos (aminoglucósidos) que potencian su efecto.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>El/la paciente CONFIRMA haber sido informado/a del procedimiento, su mecanismo de acción, efectos secundarios y contraindicaciones. AUTORIZA a Soho Beauty Clinic a realizar la infiltración. RECONOCE que los resultados son temporales y pueden variar según cada organismo. DOY FE de no haber omitido información relevante de mi historial médico.</p>
+  `,
+  acido_hialuronico: `
+    <h3>Consentimiento Informado — Ácido Hialurónico</h3>
+    <p>El ácido hialurónico es un relleno dérmico reabsorbible utilizado para restaurar volumen, definir contornos y suavizar surcos y arrugas faciales mediante infiltración.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento, hinchazón o hematomas en la zona infiltrada.</li>
+      <li>Sensibilidad o pequeños bultos palpables transitorios.</li>
+      <li>Asimetrías leves que suelen resolverse en los días posteriores.</li>
+      <li>Reacciones alérgicas (poco frecuentes).</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Alergia conocida al ácido hialurónico o a la lidocaína (si aplica).</li>
+      <li>Infección activa o inflamación en la zona a tratar.</li>
+      <li>Trastornos de la coagulación no controlados.</li>
+      <li>Enfermedades autoinmunes activas.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber sido informado/a del procedimiento, sus riesgos y contraindicaciones. AUTORIZO a Soho Beauty Clinic a realizar la infiltración de ácido hialurónico. RECONOZCO que el resultado no es permanente y que la obligación del profesional es de medios y no de resultados. DOY FE de no haber omitido datos relevantes en mi historial clínico.</p>
+  `,
+  inductores_colageno: `
+    <h3>Consentimiento Informado — Inductores de Colágeno</h3>
+    <p>Los bioestimuladores de colágeno (ej. ácido poli-L-láctico, hidroxiapatita de calcio) son sustancias inyectables que estimulan la producción natural de colágeno, mejorando progresivamente la firmeza y calidad de la piel.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento, hinchazón o hematomas en los puntos de inyección.</li>
+      <li>Nódulos palpables transitorios, especialmente si no se realiza el masaje post-tratamiento indicado.</li>
+      <li>Sensibilidad en la zona tratada durante los primeros días.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Enfermedades autoinmunes activas.</li>
+      <li>Tendencia a formar queloides o cicatrización anómala.</li>
+      <li>Infección activa en la zona a tratar.</li>
+      <li>Alergia conocida a alguno de los componentes del producto.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber sido informado/a del procedimiento y de que los resultados son progresivos, apareciendo de forma gradual en las semanas posteriores. ME COMPROMETO a realizar el masaje post-tratamiento indicado por el profesional. AUTORIZO a Soho Beauty Clinic a realizar el tratamiento. DOY FE de no haber omitido datos relevantes en mi historial clínico.</p>
+  `,
+  skin_booster: `
+    <h3>Consentimiento Informado — Skin Booster</h3>
+    <p>El skin booster consiste en microinyecciones de ácido hialurónico de baja densidad distribuidas de forma homogénea en la piel, con el fin de mejorar la hidratación, elasticidad y luminosidad cutánea.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Pequeñas pápulas o bultos en los puntos de inyección que desaparecen en 24-48 horas.</li>
+      <li>Enrojecimiento, hinchazón leve o hematomas.</li>
+      <li>Sensibilidad en la zona tratada.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Alergia conocida al ácido hialurónico.</li>
+      <li>Infección activa o lesiones cutáneas en la zona a tratar.</li>
+      <li>Trastornos de la coagulación no controlados.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber sido informado/a del procedimiento, sus efectos y contraindicaciones. AUTORIZO a Soho Beauty Clinic a realizar el tratamiento. COMPRENDO que se recomienda un protocolo de varias sesiones para obtener resultados óptimos. DOY FE de no haber omitido datos relevantes en mi historial clínico.</p>
+  `,
+  mesoterapia: `
+    <h3>Consentimiento Informado — Mesoterapia</h3>
+    <p>La mesoterapia consiste en la microinyección de vitaminas, minerales, aminoácidos y otros activos directamente en la dermis, con fines de revitalización, hidratación o tratamiento localizado según la indicación.</p>
+    <h4>Efectos secundarios posibles</h4>
+    <ul>
+      <li>Enrojecimiento, hinchazón o pequeños hematomas en los puntos de punción.</li>
+      <li>Sensibilidad o picor transitorio en la zona tratada.</li>
+      <li>Pequeñas costras puntiformes que remiten en pocos días.</li>
+    </ul>
+    <h4>Contraindicaciones</h4>
+    <ul>
+      <li>Embarazo o lactancia.</li>
+      <li>Alergia conocida a alguno de los componentes de la fórmula inyectada.</li>
+      <li>Trastornos de la coagulación no controlados.</li>
+      <li>Infección activa o lesiones cutáneas en la zona a tratar.</li>
+      <li>Enfermedades autoinmunes activas.</li>
+    </ul>
+    <h4>Declaración del paciente</h4>
+    <p>CONFIRMO haber sido informado/a del procedimiento, sus riesgos y contraindicaciones. AUTORIZO a Soho Beauty Clinic a realizar el tratamiento de mesoterapia. RECONOZCO que puede requerirse más de una sesión para obtener resultados óptimos. DOY FE de no haber omitido datos relevantes en mi historial clínico.</p>
+  `,
 };
 
 // ═══════════════════════════════════════════════════════════════
@@ -765,17 +1180,22 @@ let state = {
   treatment: null,
   personal: {},
   medical: {},
+  marketing: { intereses: [] },
   followup: [],
   areasToTreat: '',
   signature: null,
   gdpr: false,
+  marketingConsent: false,
 };
 
 // ═══════════════════════════════════════════════════════════════
 //  ROUTER
 // ═══════════════════════════════════════════════════════════════
+const STEP_NAMES = ['Tratamiento', 'Datos del paciente', 'Consentimiento', 'Firma y envío'];
+
 function render() {
   updateDots();
+  updateProgress();
   const body = document.getElementById('appBody');
   body.innerHTML = '';
   if (state.step === 1) renderStep1(body);
@@ -783,6 +1203,7 @@ function render() {
   else if (state.step === 3) renderStep3(body);
   else if (state.step === 4) renderStep4(body);
   else if (state.step === 5) renderSuccess(body);
+  insertStepEyebrow(body);
   window.scrollTo(0, 0);
 }
 
@@ -790,27 +1211,93 @@ function updateDots() {
   const dots = document.getElementById('stepDots');
   dots.innerHTML = '';
   for (let i = 1; i <= state.totalSteps; i++) {
-    const d = document.createElement('div');
-    d.className = 'step-dot' + (i === state.step ? ' active' : i < state.step ? ' done' : '');
-    dots.appendChild(d);
+    const node = document.createElement('div');
+    node.className = 'step-node' + (i === state.step ? ' active' : i < state.step ? ' done' : '');
+    node.textContent = i < state.step ? '✓' : i;
+    dots.appendChild(node);
+    if (i < state.totalSteps) {
+      const connector = document.createElement('div');
+      connector.className = 'step-connector' + (i < state.step ? ' done' : '');
+      dots.appendChild(connector);
+    }
   }
+}
+
+function updateProgress() {
+  const fill = document.getElementById('progressFill');
+  const pct = state.step > state.totalSteps ? 100 : (state.step / state.totalSteps) * 100;
+  fill.style.width = pct + '%';
+}
+
+function insertStepEyebrow(body) {
+  if (state.step < 1 || state.step > state.totalSteps) return;
+  const eyebrow = document.createElement('p');
+  eyebrow.className = 'step-eyebrow';
+  eyebrow.textContent = `Paso ${state.step} de ${state.totalSteps} · ${STEP_NAMES[state.step - 1]}`;
+  body.insertBefore(eyebrow, body.firstChild);
 }
 
 // ═══════════════════════════════════════════════════════════════
 //  STEP 1 — TRATAMIENTO
 // ═══════════════════════════════════════════════════════════════
+let openCategory = null;
+
 function renderStep1(body) {
+  if (!openCategory && state.treatment) {
+    const found = TREATMENT_CATEGORIES.find(c => c.treatments.some(t => t.id === state.treatment.id));
+    if (found) openCategory = found.category;
+  }
+
   body.innerHTML = `
     <h1 class="step-title">Seleccioná el tratamiento</h1>
     <p class="step-subtitle">Elegí el procedimiento que se realizará hoy</p>
-    <div class="treatment-grid" id="treatmentGrid"></div>
+    <div id="treatmentArea"></div>
     <div class="nav-bar">
       <div></div>
-      <button class="btn-primary" id="btnNext1" disabled>Continuar →</button>
+      <button class="btn-primary" id="btnNext1" ${state.treatment ? '' : 'disabled'}>Continuar →</button>
     </div>
   `;
+
+  renderTreatmentArea();
+
+  document.getElementById('btnNext1').addEventListener('click', () => {
+    state.step = 2;
+    render();
+  });
+}
+
+function renderTreatmentArea() {
+  const area = document.getElementById('treatmentArea');
+
+  if (!openCategory) {
+    area.innerHTML = '<div class="category-grid" id="categoryGrid"></div>';
+    const grid = document.getElementById('categoryGrid');
+    TREATMENT_CATEGORIES.forEach(cat => {
+      const card = document.createElement('div');
+      card.className = 'category-card';
+      card.innerHTML = `
+        <span class="category-icon">${cat.icon}</span>
+        <div class="category-name">${cat.category}</div>
+        <div class="category-desc">${cat.desc}</div>
+        <div class="category-count">${cat.treatments.length} tratamientos</div>
+      `;
+      card.addEventListener('click', () => {
+        openCategory = cat.category;
+        renderTreatmentArea();
+      });
+      grid.appendChild(card);
+    });
+    return;
+  }
+
+  const cat = TREATMENT_CATEGORIES.find(c => c.category === openCategory);
+  area.innerHTML = `
+    <button class="btn-back-category" id="btnBackCategory">← Categorías</button>
+    <h2 class="treatment-section-title">${cat.category}</h2>
+    <div class="treatment-grid" id="treatmentGrid"></div>
+  `;
   const grid = document.getElementById('treatmentGrid');
-  TREATMENTS.forEach(t => {
+  cat.treatments.forEach(t => {
     const card = document.createElement('div');
     card.className = 'treatment-card' + (state.treatment?.id === t.id ? ' selected' : '');
     card.innerHTML = `
@@ -826,9 +1313,10 @@ function renderStep1(body) {
     });
     grid.appendChild(card);
   });
-  document.getElementById('btnNext1').addEventListener('click', () => {
-    state.step = 2;
-    render();
+
+  document.getElementById('btnBackCategory').addEventListener('click', () => {
+    openCategory = null;
+    renderTreatmentArea();
   });
 }
 
@@ -837,6 +1325,7 @@ function renderStep1(body) {
 // ═══════════════════════════════════════════════════════════════
 function renderStep2(body) {
   const p = state.personal;
+  const m = state.marketing;
   const today = new Date().toISOString().split('T')[0];
 
   body.innerHTML = `
@@ -915,6 +1404,68 @@ function renderStep2(body) {
       </div>
     </div>
 
+    <div class="card">
+      <div class="card-title">Conocenos mejor</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>¿Cómo conociste la clínica?</label>
+          <select id="f_comoConocio">
+            <option value="" ${!m.comoConocio?'selected':''}>Seleccionar…</option>
+            <option value="Instagram/Redes sociales" ${m.comoConocio==='Instagram/Redes sociales'?'selected':''}>Instagram/Redes sociales</option>
+            <option value="Recomendación" ${m.comoConocio==='Recomendación'?'selected':''}>Recomendación</option>
+            <option value="Google/Búsqueda" ${m.comoConocio==='Google/Búsqueda'?'selected':''}>Google/Búsqueda</option>
+            <option value="Publicidad" ${m.comoConocio==='Publicidad'?'selected':''}>Publicidad</option>
+            <option value="Pasé por la puerta" ${m.comoConocio==='Pasé por la puerta'?'selected':''}>Pasé por la puerta</option>
+            <option value="Otro" ${m.comoConocio==='Otro'?'selected':''}>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferencia de contacto para promociones</label>
+          <select id="f_preferenciaContacto">
+            <option value="" ${!m.preferenciaContacto?'selected':''}>Seleccionar…</option>
+            <option value="Email" ${m.preferenciaContacto==='Email'?'selected':''}>Email</option>
+            <option value="WhatsApp" ${m.preferenciaContacto==='WhatsApp'?'selected':''}>WhatsApp</option>
+            <option value="SMS" ${m.preferenciaContacto==='SMS'?'selected':''}>SMS</option>
+            <option value="No deseo recibir promociones" ${m.preferenciaContacto==='No deseo recibir promociones'?'selected':''}>No deseo recibir promociones</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Instagram / redes sociales (opcional)</label>
+          <input type="text" id="f_redesSociales" value="${m.redesSociales||''}" placeholder="@usuario">
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="yesno-grid">
+        <div class="yesno-row">
+          <span class="yesno-question">¿Te realizaste antes alguno de nuestros tratamientos (acá o en otro centro)?</span>
+          <div class="yesno-buttons" id="ynTratamientoPrevio">
+            <button class="yn-btn yes ${m.tratamientoPrevio===true?'active':''}" data-v="true">Sí</button>
+            <button class="yn-btn no ${m.tratamientoPrevio===false?'active':''}" data-v="false">No</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group" id="fg_cualTratamiento" style="margin-top:12px; display:${m.tratamientoPrevio===true?'flex':'none'};">
+        <label>¿Cuál?</label>
+        <input type="text" id="f_cualTratamiento" value="${m.cualTratamiento||''}" placeholder="Ej: Botox en otra clínica">
+      </div>
+
+      <div class="yesno-grid" style="margin-top:8px;">
+        <div class="yesno-row">
+          <span class="yesno-question">¿Conocías todo nuestro catálogo de tratamientos?</span>
+          <div class="yesno-buttons" id="ynConoceCatalogo">
+            <button class="yn-btn yes ${m.conoceCatalogo===true?'active':''}" data-v="true">Sí</button>
+            <button class="yn-btn no ${m.conoceCatalogo===false?'active':''}" data-v="false">No</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <label>¿En qué tratamientos te gustaría profundizar a futuro?</label>
+      <div class="chip-wrap" id="interestChips"></div>
+    </div>
+
     <div class="nav-bar">
       <button class="btn-secondary" id="btnBack2">← Volver</button>
       <button class="btn-primary" id="btnNext2">Continuar →</button>
@@ -948,6 +1499,42 @@ function renderStep2(body) {
     });
   });
 
+  // ¿Tratamiento previo?
+  document.querySelectorAll('#ynTratamientoPrevio .yn-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.v === 'true';
+      state.marketing.tratamientoPrevio = v;
+      document.querySelectorAll('#ynTratamientoPrevio .yn-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('fg_cualTratamiento').style.display = v ? 'flex' : 'none';
+    });
+  });
+
+  // ¿Conocía el catálogo?
+  document.querySelectorAll('#ynConoceCatalogo .yn-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.marketing.conoceCatalogo = btn.dataset.v === 'true';
+      document.querySelectorAll('#ynConoceCatalogo .yn-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Chips de intereses a futuro
+  const chipsWrap = document.getElementById('interestChips');
+  TREATMENT_CATEGORIES.flatMap(c => c.treatments).forEach(t => {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'chip' + (m.intereses.includes(t.id) ? ' active' : '');
+    chip.textContent = t.name;
+    chip.addEventListener('click', () => {
+      const idx = m.intereses.indexOf(t.id);
+      if (idx === -1) m.intereses.push(t.id);
+      else m.intereses.splice(idx, 1);
+      chip.classList.toggle('active');
+    });
+    chipsWrap.appendChild(chip);
+  });
+
   document.getElementById('btnBack2').addEventListener('click', () => { state.step = 1; render(); });
   document.getElementById('btnNext2').addEventListener('click', () => {
     if (!validateStep2()) return;
@@ -975,6 +1562,10 @@ function savePersonalData() {
     const el = document.getElementById('f_'+f);
     if (el) state.personal[f] = el.value;
   });
+  ['comoConocio','preferenciaContacto','redesSociales','cualTratamiento'].forEach(f => {
+    const el = document.getElementById('f_'+f);
+    if (el) state.marketing[f] = el.value;
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -1000,8 +1591,8 @@ function renderStep3(body) {
 
     <div class="card">
       <div class="card-title">Documento de consentimiento</div>
-      <div class="consent-box">${CONSENT_TEXTS[t.id]}</div>
-      <p style="font-size:12px;color:var(--light-mid);text-align:center;">Desplazá para leer el documento completo antes de continuar</p>
+      <div class="consent-box" id="consentBox">${CONSENT_TEXTS[t.id]}</div>
+      <p class="consent-hint" id="consentHint">Desplazá para leer el documento completo antes de continuar</p>
     </div>
 
     ${hasFollowup ? `
@@ -1028,7 +1619,7 @@ function renderStep3(body) {
 
     <div class="nav-bar">
       <button class="btn-secondary" id="btnBack3">← Volver</button>
-      <button class="btn-primary" id="btnNext3">Ir a firmar →</button>
+      <button class="btn-primary" id="btnNext3" disabled>Ir a firmar →</button>
     </div>
   `;
 
@@ -1039,6 +1630,22 @@ function renderStep3(body) {
     document.getElementById('btnAddRow').addEventListener('click', addFollowupRow);
     document.getElementById('f_areas').addEventListener('input', e => { state.areasToTreat = e.target.value; });
   }
+
+  // Exigir scroll completo del consentimiento antes de habilitar "Ir a firmar"
+  const consentBox = document.getElementById('consentBox');
+  const consentHint = document.getElementById('consentHint');
+  const btnNext3 = document.getElementById('btnNext3');
+  function checkConsentRead() {
+    const reachedEnd = consentBox.scrollTop + consentBox.clientHeight >= consentBox.scrollHeight - 4;
+    if (reachedEnd) {
+      btnNext3.disabled = false;
+      consentHint.textContent = '✓ Documento leído completo';
+      consentHint.classList.add('read');
+      consentBox.removeEventListener('scroll', checkConsentRead);
+    }
+  }
+  consentBox.addEventListener('scroll', checkConsentRead);
+  checkConsentRead();
 
   document.getElementById('btnBack3').addEventListener('click', () => { state.step = 2; render(); });
   document.getElementById('btnNext3').addEventListener('click', () => {
@@ -1088,18 +1695,7 @@ let signatureCanvas, signatureCtx, isDrawing = false, hasSigned = false;
 function renderStep4(body) {
   body.innerHTML = `
     <h1 class="step-title">Firma y envío</h1>
-    <p class="step-subtitle">Firma con el dedo en el recuadro para completar el proceso</p>
-
-    <div class="card">
-      <div class="card-title">Firma del Paciente</div>
-      <div class="signature-wrapper" id="sigWrapper">
-        <canvas id="sigCanvas" width="740" height="200"></canvas>
-        <span class="signature-label" id="sigLabel">Firmá aquí con el dedo →</span>
-      </div>
-      <div class="sig-actions">
-        <button class="btn-clear" id="btnClearSig">Limpiar firma</button>
-      </div>
-    </div>
+    <p class="step-subtitle">Revisá los consentimientos y firmá para completar el proceso</p>
 
     <div class="card">
       <div class="card-title">Protección de datos</div>
@@ -1111,6 +1707,16 @@ function renderStep4(body) {
       </div>
     </div>
 
+    <div class="card">
+      <div class="card-title">Comunicaciones y promociones</div>
+      <div class="gdpr-box">
+        <input type="checkbox" id="marketingCheck" ${state.marketingConsent?'checked':''}>
+        <label for="marketingCheck">
+          Deseo recibir promociones, novedades y ofertas exclusivas de Soho Beauty Clinic por email o WhatsApp. Es opcional y puedo darme de baja cuando quiera.
+        </label>
+      </div>
+    </div>
+
     <div class="card" style="background:rgba(201,169,110,0.05);border-color:var(--gold-light);">
       <div class="card-title">Resumen de la sesión</div>
       <div style="font-size:14px;color:var(--mid);line-height:2;">
@@ -1118,6 +1724,17 @@ function renderStep4(body) {
         <strong style="color:var(--charcoal)">Tratamiento:</strong> ${state.treatment.name}<br>
         <strong style="color:var(--charcoal)">Fecha:</strong> ${state.personal.fecha || new Date().toLocaleDateString('es-ES')}<br>
         <strong style="color:var(--charcoal)">Documento:</strong> ${state.personal.documento}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Firma del Paciente</div>
+      <div class="signature-wrapper" id="sigWrapper">
+        <canvas id="sigCanvas" width="740" height="200"></canvas>
+        <span class="signature-label" id="sigLabel">Firmá aquí con el dedo →</span>
+      </div>
+      <div class="sig-actions">
+        <button class="btn-clear" id="btnClearSig">Limpiar firma</button>
       </div>
     </div>
 
@@ -1171,6 +1788,7 @@ function renderStep4(body) {
   });
 
   document.getElementById('gdprCheck').addEventListener('change', e => { state.gdpr = e.target.checked; });
+  document.getElementById('marketingCheck').addEventListener('change', e => { state.marketingConsent = e.target.checked; });
   document.getElementById('btnBack4').addEventListener('click', () => { state.step = 3; render(); });
   document.getElementById('btnSubmit').addEventListener('click', handleSubmit);
 }
@@ -1423,6 +2041,11 @@ async function sendToGoogleDrive(pdfBase64) {
   const filename = `${state.personal.apellidos||'Paciente'}_${state.personal.nombre||''}_${state.treatment.id}_${fecha}.pdf`
     .replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_\-\.]/g, '');
 
+  const m = state.marketing;
+  const interesesNombres = m.intereses
+    .map(id => TREATMENT_CATEGORIES.flatMap(c => c.treatments).find(t => t.id === id)?.name)
+    .filter(Boolean);
+
   const payload = {
     pdf: pdfBase64,
     filename,
@@ -1430,6 +2053,17 @@ async function sendToGoogleDrive(pdfBase64) {
     paciente: `${state.personal.nombre} ${state.personal.apellidos}`,
     tratamiento: state.treatment.name,
     fecha,
+    email: state.personal.email || '',
+    telefono: state.personal.telefono || '',
+    nacimiento: state.personal.nacimiento || '',
+    comoConocio: m.comoConocio || '',
+    tratamientoPrevio: m.tratamientoPrevio === true ? 'Sí' : m.tratamientoPrevio === false ? 'No' : '',
+    cualTratamientoPrevio: m.cualTratamiento || '',
+    conoceCatalogo: m.conoceCatalogo === true ? 'Sí' : m.conoceCatalogo === false ? 'No' : '',
+    interesesFuturos: interesesNombres.join(', '),
+    redesSociales: m.redesSociales || '',
+    preferenciaContacto: m.preferenciaContacto || '',
+    marketingConsent: state.marketingConsent ? 'Sí' : 'No',
   };
 
   const resp = await fetch(APPS_SCRIPT_URL, {
@@ -1446,16 +2080,43 @@ async function sendToGoogleDrive(pdfBase64) {
 // ═══════════════════════════════════════════════════════════════
 function renderSuccess(body) {
   document.getElementById('stepDots').innerHTML = '';
+
+  const fecha = state.personal.fecha
+    ? new Date(state.personal.fecha + 'T00:00').toLocaleDateString('es-ES')
+    : new Date().toLocaleDateString('es-ES');
+  const carpeta = (state.personal.apellidos || '').charAt(0).toUpperCase() || '—';
+
+  const followupNote = state.treatment.hasFollowup
+    ? `<div class="success-note">📋 Recordá completar la planilla de seguimiento en las próximas sesiones de ${state.treatment.name}.</div>`
+    : '';
+  const marketingNote = state.marketingConsent
+    ? `<div class="success-note">💌 ${state.personal.nombre || 'El/la paciente'} recibirá promociones y novedades por ${state.marketing.preferenciaContacto || 'email/WhatsApp'}.</div>`
+    : '';
+
   body.innerHTML = `
     <div class="success-screen">
-      <span class="success-icon">✅</span>
+      <div class="success-check">
+        <svg viewBox="0 0 80 80" width="80" height="80">
+          <circle class="success-check-circle" cx="40" cy="40" r="36" fill="none" stroke="var(--success)" stroke-width="4"/>
+          <path class="success-check-mark" d="M24 42 L36 54 L58 28" fill="none" stroke="var(--success)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
       <h1 class="success-title">¡Todo listo!</h1>
-      <p class="success-subtitle">
-        El consentimiento de <strong>${state.personal.nombre} ${state.personal.apellidos}</strong><br>
-        fue guardado en Google Drive correctamente.<br><br>
-        Carpeta: <strong>${(state.personal.apellidos||'').charAt(0).toUpperCase()}</strong> / ${state.treatment.name}
-      </p>
-      <div style="margin-top:40px;">
+      <p class="success-subtitle">El consentimiento fue guardado en Google Drive correctamente.</p>
+
+      <div class="card success-card">
+        <div style="font-size:14px;color:var(--mid);line-height:2;">
+          <strong style="color:var(--charcoal)">Paciente:</strong> ${state.personal.nombre} ${state.personal.apellidos}<br>
+          <strong style="color:var(--charcoal)">Tratamiento:</strong> ${state.treatment.name}<br>
+          <strong style="color:var(--charcoal)">Fecha:</strong> ${fecha}<br>
+          <strong style="color:var(--charcoal)">Carpeta en Drive:</strong> ${carpeta} / ${state.treatment.name}
+        </div>
+      </div>
+
+      ${followupNote}
+      ${marketingNote}
+
+      <div style="margin-top:32px;">
         <button class="btn-primary" id="btnNewPatient" style="font-size:15px;padding:16px 44px;">
           Nuevo paciente →
         </button>
@@ -1463,7 +2124,8 @@ function renderSuccess(body) {
     </div>
   `;
   document.getElementById('btnNewPatient').addEventListener('click', () => {
-    state = { step:1, totalSteps:4, treatment:null, personal:{}, medical:{}, followup:[], areasToTreat:'', signature:null, gdpr:false };
+    state = { step:1, totalSteps:4, treatment:null, personal:{}, medical:{}, marketing:{intereses:[]}, followup:[], areasToTreat:'', signature:null, gdpr:false, marketingConsent:false };
+    openCategory = null;
     render();
   });
 }

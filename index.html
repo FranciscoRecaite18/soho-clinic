@@ -898,24 +898,115 @@ const TREATMENT_CATEGORIES = [
   },
 ];
 
-const MEDICAL_QUESTIONS = [
-  '¿Se ha realizado tratamiento láser anteriormente?',
-  '¿Presentó efectos secundarios al realizarse el mismo?',
-  '¿Toma alguna medicación?',
-  '¿Toma anticonceptivos?',
-  '¿Tiene alteraciones hormonales o toma hormonas/esteroides?',
-  '¿Suele padecer herpes?',
-  '¿Padece diabetes?',
-  '¿Padece trastornos vasculares?',
-  '¿Está o cree que podría estar embarazada?',
-  '¿Se ha realizado peeling químico recientemente?',
-  '¿Padece problemas cardíacos?',
-  '¿Padece epilepsia?',
-  '¿Le aparecen manchas en la piel con facilidad?',
-  '¿Ha tenido una intervención quirúrgica reciente?',
-  '¿Consume algún tipo de droga o estupefaciente?',
-  '¿Tiene marcapasos u otro implante electrónico?',
-];
+const MEDICAL_QUESTIONS = {
+  laser: [
+    '¿Se ha realizado tratamiento láser anteriormente?',
+    '¿Presentó efectos secundarios al realizarse el mismo?',
+    '¿Toma alguna medicación fotosensibilizante?',
+    '¿Ha tomado sol, usado cabina UVA o autobronceador recientemente?',
+    '¿Tiene la piel bronceada en la zona a tratar?',
+    '¿Padece alguna enfermedad con fotosensibilidad (ej. lupus)?',
+    '¿Tiene alteraciones hormonales o toma hormonas/esteroides?',
+    '¿Suele padecer herpes?',
+    '¿Está o cree que podría estar embarazada?',
+    '¿Padece epilepsia?',
+    '¿Tiene tendencia a formar queloides o cicatrices?',
+    '¿Tiene implantes metálicos o marcapasos en la zona a tratar?',
+  ],
+  radiofrecuencia: [
+    '¿Tiene marcapasos, desfibrilador u otro implante electrónico?',
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Padece tromboflebitis o algún trastorno cardíaco severo?',
+    '¿Tiene o ha tenido cáncer de piel u otro proceso oncológico activo?',
+    '¿Padece herpes simple activo?',
+    '¿Se realizó alguna cirugía reciente en la zona a tratar?',
+  ],
+  cavitacion: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Tiene prótesis o implantes metálicos / osteosíntesis?',
+    '¿Padece epilepsia?',
+    '¿Tiene heridas abiertas o quemaduras en la zona a tratar?',
+    '¿Tiene el colesterol o los triglicéridos elevados?',
+    '¿Padece otitis crónica o algún proceso febril activo?',
+    '¿Tiene alguna patología hepática o renal?',
+    '¿Tiene algún proceso oncológico activo?',
+    '¿Tiene marcapasos?',
+    '¿Padece alguna enfermedad autoinmune o inmunodeficiencia?',
+  ],
+  limpieza: [
+    '¿Padece acné activo severo o rosácea?',
+    '¿Tiene herpes labial activo?',
+    '¿Tiene la piel extremadamente sensible o alérgica?',
+    '¿Usó retinoides, ácido glicólico u otros exfoliantes fuertes recientemente?',
+    '¿Tiene alguna herida o infección activa en el rostro?',
+  ],
+  microneedling: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Padece alguna enfermedad cutánea activa o infección localizada?',
+    '¿Tiene tendencia a formar queloides o cicatrices hipertróficas?',
+    '¿Padece diabetes no controlada?',
+    '¿Padece alguna enfermedad autoinmune?',
+    '¿Tiene algún trastorno de coagulación?',
+    '¿Toma anticoagulantes, retinoides orales o medicamentos inmunosupresores?',
+    '¿Tomó aspirina o derivados en la última semana?',
+  ],
+  hifu_facial: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Tiene marcapasos u otro implante electrónico?',
+    '¿Tiene implantes metálicos o de relleno permanente en el rostro?',
+    '¿Tiene alguna infección activa, herida o psoriasis activa en la zona?',
+    '¿Padece alguna enfermedad autoinmune o trastorno de coagulación no controlado?',
+    '¿Tiene antecedentes de cáncer de piel o tumores?',
+  ],
+  hifu_corporal: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Tiene marcapasos u otro dispositivo electrónico implantado?',
+    '¿Tiene prótesis metálicas en la zona a tratar?',
+    '¿Tiene algún proceso oncológico activo o antecedentes de cáncer de piel?',
+    '¿Tiene infecciones activas o psoriasis activa en la zona?',
+    '¿Padece algún trastorno de coagulación o enfermedad autoinmune?',
+  ],
+  botox: [
+    '¿Se ha realizado tratamientos con toxina botulínica anteriormente?',
+    '¿Presentó efectos secundarios en tratamientos previos con toxina botulínica?',
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Padece alguna enfermedad neuromuscular (ej. miastenia gravis, ELA)?',
+    '¿Es alérgico/a a la toxina botulínica o a alguno de sus componentes?',
+    '¿Tiene alguna infección activa en la zona a tratar?',
+    '¿Toma antibióticos aminoglucósidos u otro medicamento que afecte la unión neuromuscular?',
+  ],
+  acido_hialuronico: [
+    '¿Se ha realizado tratamientos de relleno anteriormente?',
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Es alérgico/a al ácido hialurónico o a la lidocaína?',
+    '¿Tiene alguna infección o inflamación activa en la zona a tratar?',
+    '¿Padece algún trastorno de coagulación no controlado?',
+    '¿Padece alguna enfermedad autoinmune activa?',
+    '¿Tiene antecedentes de infección por estreptococo?',
+    '¿Tiene tendencia a formar cicatrices hipertróficas?',
+  ],
+  inductores_colageno: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Padece alguna enfermedad autoinmune activa (lupus, artritis reumatoide)?',
+    '¿Tiene tendencia a formar queloides o cicatrización anómala?',
+    '¿Tiene alguna infección activa en la zona a tratar?',
+    '¿Ha tenido alguna reacción alérgica a rellenos inyectables anteriormente (ácido hialurónico, colágeno, hidroxiapatita, PMMA, etc.)?',
+  ],
+  skin_booster: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Es alérgico/a al ácido hialurónico o a la lidocaína?',
+    '¿Tiene alguna infección o lesión activa en la zona a tratar?',
+    '¿Padece algún trastorno de coagulación no controlado?',
+    '¿Padece alguna enfermedad autoinmune activa?',
+  ],
+  mesoterapia: [
+    '¿Está o cree que podría estar embarazada, o en período de lactancia?',
+    '¿Tiene alergias conocidas a vitaminas, minerales o principios activos inyectables?',
+    '¿Padece algún trastorno de coagulación no controlado?',
+    '¿Tiene alguna infección activa o lesión cutánea en la zona a tratar?',
+    '¿Padece alguna enfermedad autoinmune activa?',
+  ],
+};
 
 const CONSENT_TEXTS = {
   laser: `
@@ -1323,6 +1414,7 @@ function renderTreatmentArea() {
       <div class="treatment-desc">${t.desc}</div>
     `;
     card.addEventListener('click', () => {
+      if (state.treatment?.id !== t.id) state.medical = {};
       state.treatment = t;
       document.querySelectorAll('.treatment-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
@@ -1412,7 +1504,7 @@ function renderStep2(body) {
     </div>
 
     <div class="card">
-      <div class="card-title">Cuestionario Médico</div>
+      <div class="card-title">Cuestionario Médico — ${state.treatment.name}</div>
       <div class="yesno-grid" id="medicalGrid"></div>
       <div class="divider"></div>
       <div class="form-group">
@@ -1489,9 +1581,10 @@ function renderStep2(body) {
     </div>
   `;
 
-  // Render medical questions
+  // Render medical questions (específicas del tratamiento seleccionado)
   const grid = document.getElementById('medicalGrid');
-  MEDICAL_QUESTIONS.forEach((q, i) => {
+  const medicalQuestions = MEDICAL_QUESTIONS[state.treatment.id] || [];
+  medicalQuestions.forEach((q, i) => {
     const row = document.createElement('div');
     row.className = 'yesno-row';
     const saved = state.medical[i];
@@ -1917,7 +2010,8 @@ async function generatePDF() {
   hLine([220,205,185]);
   newLine(0.5);
 
-  MEDICAL_QUESTIONS.forEach((q, i) => {
+  const pdfMedicalQuestions = MEDICAL_QUESTIONS[t.id] || [];
+  pdfMedicalQuestions.forEach((q, i) => {
     checkPage(8);
     const ans = state.medical[i];
     const ansText = ans === true ? 'SÍ' : ans === false ? 'NO' : 'N/R';
@@ -1927,7 +2021,7 @@ async function generatePDF() {
     doc.setFontSize(10); doc.setFont('helvetica','bold'); doc.setTextColor(...color);
     doc.text(ansText, W-margin, y, {align:'right'});
     newLine(1);
-    if (i < MEDICAL_QUESTIONS.length-1) {
+    if (i < pdfMedicalQuestions.length-1) {
       doc.setDrawColor(235,225,215);
       doc.line(margin, y, W-margin, y);
     }
